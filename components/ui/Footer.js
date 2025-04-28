@@ -3,7 +3,7 @@ import NextLink from "next/link";
 import NavLink from "@/components/ui/NavLink";
 import CloudImage from "./CloudImage";
 import { logoImages } from "@/constants/images";
-import { navItems } from "@/constants/content";
+import { navItems, businessInfo } from "@/constants/content";
 // React-icons imports
 import { HiPhone } from "react-icons/hi";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
@@ -11,33 +11,26 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="bg-gray-800 text-gray-200 py-12">
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 grid grid-cols-1 tablet:grid-cols-4 gap-8">
         {/* Logo & Tagline */}
         <div>
-          <NextLink href="/" className="flex items-center mb-4">
-            <div className="relative w-20 h-20" >
-              <CloudImage
-                src={logoImages.darkBg.src}
-                alt={logoImages.darkBg.alt}
-                className="object-contain"
-              />
-            </div>
+          <NavLink href="/" className="flex items-center mb-4">
             <span className="ml-2 text-xl font-bold text-white">
-              Wheel Doctor
+              {businessInfo.name}
             </span>
-          </NextLink>
-          <p className="text-sm text-gray-400">
-            Mobile alloy wheel repair at your doorstep.
-          </p>
+          </NavLink>
+          <p className="text-sm text-gray-400">{businessInfo.tagline}</p>
         </div>
 
         {/* Quick Links */}
         <div>
-          <h3 className="mb-4 font-semibold text-white">Quick Links</h3>
+          <p className="mb-4 text-xl font-semibold text-white">Quick Links</p>
           <ul className="space-y-2">
             {navItems.map((item) => (
               <li key={item.href}>
-                <NavLink href={item.href}>{item.label}</NavLink>
+                <NavLink href={item.href} className="text-white">
+                  {item.label}
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -45,45 +38,41 @@ export default function Footer() {
 
         {/* Contact Info */}
         <div>
-          <h3 className="mb-4 font-semibold text-white">Contact</h3>
+          <p className="mb-4 text-xl font-semibold text-white">Contact</p>
           <p className="flex items-center">
             <HiPhone className="w-5 h-5 text-primary mr-2" />
-            <span>(555) 123-4567</span>
+            <span>{businessInfo.phone}</span>
           </p>
           <p className="mt-2">Mon–Sat: 8 AM–6 PM</p>
         </div>
 
         {/* Social Media */}
         <div>
-          <h3 className="mb-4 font-semibold text-white">Follow Us</h3>
-          <div className="flex space-x-4">
-            <NextLink
-              href="#"
+          <p className="mb-4 text-xl font-semibold text-white">Follow Us</p>
+          <div className="flex space-x-4 ">
+            <NavLink
+              href={businessInfo.social.facebook}
               aria-label="Facebook"
-              className="hover:text-white"
+              className="text-white"
             >
               <FaFacebook className="w-6 h-6" />
-            </NextLink>
-            <NextLink
-              href="#"
+            </NavLink>
+            <NavLink
+              href={businessInfo.social.instagram}
               aria-label="Instagram"
-              className="hover:text-white"
+              className="text-white"
             >
               <FaInstagram className="w-6 h-6" />
-            </NextLink>
-            <NextLink
-              href="#"
-              aria-label="Twitter"
-              className="hover:text-white"
-            >
+            </NavLink>
+            <NavLink href="#" aria-label="Twitter" className="text-white">
               <FaTwitter className="w-6 h-6" />
-            </NextLink>
+            </NavLink>
           </div>
         </div>
       </div>
 
       <div className="mt-8 text-center text-xs text-gray-500">
-        © {new Date().getFullYear()} Wheel Doctor. All rights reserved.
+        © {new Date().getFullYear()} {businessInfo.name}. All rights reserved.
         <br />
         Designed by{" "}
         <NextLink
@@ -92,7 +81,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="underline hover:text-white"
         >
-          Pixel & Code
+          {businessInfo.name}
         </NextLink>
       </div>
     </footer>

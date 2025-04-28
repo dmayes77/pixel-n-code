@@ -9,18 +9,19 @@ export default function NavBar({ logoImages, navItems }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="bg-white sticky top-0 z-50 shadow-md">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-8 py-2">
+    <header className="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-gray-200 shadow-md">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-8 ">
         {/* Logo */}
         <BrandLogo
           href="/"
-          image={logoImages.whtBg.src}
-          alt={logoImages.whtBg.alt}
-          size={50}
+          image={logoImages.main.src}
+          alt={logoImages.main.alt}
+          ratio={4 / 3}
+          width="w-[100px]"
         />
 
         {/* Desktop nav */}
-        <div className="hidden lg:flex lg:gap-x-8">
+        <div className="hidden laptop:flex laptop:gap-x-8">
           {navItems.map((item) => (
             <NavLink key={item.key || item.href} href={item.href}>
               {item.label}
@@ -30,7 +31,7 @@ export default function NavBar({ logoImages, navItems }) {
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden p-2 text-gray-700"
+          className="laptop:hidden p-2 text-gray-700"
           onClick={() => setOpen(true)}
           aria-label="Open menu"
         >
@@ -39,12 +40,16 @@ export default function NavBar({ logoImages, navItems }) {
       </nav>
 
       {/* Mobile menu */}
-      <Dialog open={open} onClose={() => setOpen(false)} className="lg:hidden">
+      <Dialog
+        open={open}
+        onClose={() => setOpen(false)}
+        className="laptop:hidden"
+      >
         <DialogPanel className="fixed inset-0 z-60 bg-white p-6">
           <div className="flex justify-between items-center">
             <BrandLogo
-              image={logoImages.whtBg.src}
-              alt={logoImages.whtBg.alt}
+              image={logoImages.main.src}
+              alt={logoImages.main.alt}
               size={50}
             />
             <button onClick={() => setOpen(false)} aria-label="Close menu">

@@ -11,15 +11,15 @@ export default function NavLink({
   const path = usePathname();
   const isActive = path === href;
   const baseStyles = mobile
-    ? "block text-lg font-medium hover:text-primary"
-    : "text-sm font-medium hover:text-primary";
+    ? "block text-lg font-medium hover:brightness-80"
+    : "text-sm font-medium hover:brightness-80";
 
   return (
     <NextLink
       href={href}
       {...props}
       className={`${baseStyles} ${
-        isActive ? "text-primary font-semibold" : "text-gray-700"
+        isActive ? "text-primary font-semibold" : "text-gray-800"
       } ${className}`}
     >
       {children}

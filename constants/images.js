@@ -1,14 +1,9 @@
 const images = {
   logo: {
-    whtBg: {
-      src: "wheel-doctor/logo-images/white-bg",
-      alt: "Wheel Doctor Logo on White Background",
+    main: {
+      src: "pixel-n-code/logo-images/pixel-n-code-logo",
+      alt: "Pixel & Code Logo",
     },
-    darkBg: {
-      src: "wheel-doctor/logo-images/dark-bg",
-      alt: "Wheel Doctor Logo on Dark Background",
-    },
-    whtBgNoText: { src: "wheel-doctor/logo-images/white-bg" },
   },
 
   glry: {
