@@ -10,7 +10,7 @@ export default function ServicesOverview({ content }) {
 
   return (
     <section>
-      <div className="rounded-lg overflow-hidden bg-primary/10 max-w-7xl mx-auto">
+      <div className="rounded-lg overflow-hidden bg-accent/10 max-w-7xl mx-auto">
         <div className="max-w-7xl mx-auto space-y-16">
           {content.map((service, index) => (
             <div

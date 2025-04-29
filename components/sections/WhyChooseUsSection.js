@@ -39,10 +39,10 @@ export default function WhyChooseUsSection({ content }) {
             return (
               <div
                 key={index}
-                className="flex flex-col items-center text-center p-12 bg-white rounded-lg shadow-md space-y-4"
+                className="flex flex-col items-center text-center mobile:p-8 bg-primary/5 rounded-lg shadow-md space-y-4"
               >
-                {Icon && <Icon className="text-primary text-5xl" />}
-                <h3>{feature.title}</h3>
+                {Icon && <Icon className="text-accent text-5xl" />}
+                <h3 className="text-accent">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
             );

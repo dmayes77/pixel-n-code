@@ -1,9 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaFileAlt, FaPencilRuler, FaCode, FaThumbsUp } from "react-icons/fa";
+import { Button } from "../ui/button";
+import { AspectRatio } from "../ui/aspect-ratio";
+import CloudImage from "../ui/CloudImage";
 
 // ICON MAP
 const icons = {
@@ -19,31 +21,33 @@ export default function ProcessSection({ content }) {
   const { heading, paragraph, image, steps, buttonText, buttonLink } = content;
 
   return (
-    <section className="space-y-12 bg-white">
+    <section className="space-y-12 bg-accent/5">
       {/* Heading */}
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="text-center">
-          <h2 className="text-primary">
-            {heading}
-          </h2>
+          <h2 className="text-primary">{heading}</h2>
         </div>
 
         {/* Main Content */}
-        <div className="flex flex-col tablet:flex-row items-start gap-12">
+        <div className="flex mobile:flex-col laptop:flex-row items-start gap-12">
           {/* Left: Paragraph + Image */}
-          <div className="tablet:w-1/2 space-y-8">
+          <div className="mobile:w-full laptop:w-1/2 space-y-8">
             <p className="text-gray-600">{paragraph}</p>
-            <Image
-              src={image}
-              alt="Website development process"
-              width={600}
-              height={500}
-              className="rounded-lg shadow-md object-cover w-full"
-            />
+            <AspectRatio
+              ratio={1 / 1}
+              className="rounded-lg shadow-md overflow-hidden"
+            >
+              <CloudImage
+                publicId={image.publicId}
+                alt={image.alt}
+                objectFit="cover"
+                className="object-cover"
+              />
+            </AspectRatio>
           </div>
 
           {/* Right: Steps */}
-          <div className="tablet:w-1/2 space-y-8">
+          <div className="mobile:w-full laptop:w-1/2 space-y-8">
             {steps.map((stepItem, index) => {
               const Icon = icons[stepItem.icon];
               return (
@@ -62,7 +66,7 @@ export default function ProcessSection({ content }) {
                   {/* Icon and Line */}
                   <div className="flex flex-col items-center">
                     <div className="bg-primary p-4 rounded-full">
-                      {Icon && <Icon className="text-white text-2xl" />}
+                      {Icon && <Icon className="text-white mobile:text-lg tablet:text-xl laptop:text-2xl" />}
                     </div>
                     {index !== steps.length - 1 && (
                       <div className="h-full w-px bg-gray-300 mt-2"></div>
@@ -71,9 +75,7 @@ export default function ProcessSection({ content }) {
 
                   {/* Text */}
                   <div>
-                    <h3>
-                      {stepItem.title}
-                    </h3>
+                    <h3>{stepItem.title}</h3>
                     <p className="text-gray-600">{stepItem.description}</p>
                   </div>
                 </motion.div>
@@ -84,11 +86,9 @@ export default function ProcessSection({ content }) {
 
         {/* Button */}
         <div className="flex justify-center pt-8">
-          <Link href={buttonLink}>
-            <button className="px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-full font-semibold">
-              {buttonText}
-            </button>
-          </Link>
+          <Button asChild>
+            <Link href={buttonLink}>{buttonText}</Link>
+          </Button>
         </div>
       </div>
     </section>

@@ -4,9 +4,12 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import BrandLogo from "./BrandLogo";
 import NavLink from "./NavLink";
+import { useBusinessInfo } from "@/context/BusinessInfoContext";
 
 export default function NavBar({ logoImages, navItems }) {
+  const { logo } = useBusinessInfo();
   const [open, setOpen] = useState(false);
+  console.log(logo);
 
   return (
     <header className="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-gray-200 shadow-md">
@@ -14,10 +17,10 @@ export default function NavBar({ logoImages, navItems }) {
         {/* Logo */}
         <BrandLogo
           href="/"
-          image={logoImages.main.src}
-          alt={logoImages.main.alt}
-          ratio={4 / 3}
-          width="w-[100px]"
+          image={logo.publicId.longFormat}
+          alt={logo.alt}
+          ratio={3 / 1}
+          width="w-[200px]"
         />
 
         {/* Desktop nav */}

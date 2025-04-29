@@ -1,3 +1,4 @@
+"use client"
 import ParallaxSection from "@/components/sections/ParallaxSection";
 import ProcessSection from "@/components/sections/ProcessSection";
 import ServicesOverview from "@/components/sections/ServicesOverview";
@@ -11,9 +12,10 @@ import {
   textImageSectionContent,
   whyChooseUsContent,
 } from "@/constants/content";
-import { logoImages } from "@/constants/images";
+import { useBusinessInfo } from "@/context/BusinessInfoContext";
 
 export default function Home() {
+  const {logo} = useBusinessInfo()
   return (
     <div className="flex flex-col items-center justify-center min-h-screen space-y-16">
       <TextImageSection content={textImageSectionContent.homePage} />
@@ -22,8 +24,8 @@ export default function Home() {
       <WhyChooseUsSection content={whyChooseUsContent.homePage} />
       <ProcessSection content={processContent.homePage}/>
       <BrandLogo
-        image={logoImages.main.src}
-        alt={logoImages.main.alt}
+        image={logo.publicId.shortFormat}
+        alt={logo.alt}
         ratio={4 / 3}
         width="w-100"
       />

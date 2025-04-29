@@ -2,7 +2,7 @@
 
 //Business Info
 export const businessInfo = {
-  name: "Pixel & Code Web Design",
+  name: "Code & Pixel Web Design",
   tagline: "Vision Meets Function",
   phone: "(423) 497-0881",
   email: "info@pixelncode.io",
@@ -12,7 +12,14 @@ export const businessInfo = {
     state: "TN",
     zip: "37402",
   },
-  logoPublicId: "pixel-n-code/logo-images/pixel-n-code-logo",
+  logo: {
+    publicId: {
+      shortFormat: "pixel-n-code/logo-images/cnp-short-format-logo",
+      longFormat: "pixel-n-code/logo-images/cnp-long-format-logo",
+      logoOnly: "pixel-n-code/logo-images/cnp-logo-only",
+    },
+    alt: "Code an Pixel Logo",
+  },
   website: "https://pixelncode.io",
   social: {
     facebook: "https://facebook.com/pixelncode",
@@ -37,7 +44,7 @@ export const heroContent = {
     headline: (
       <>
         Empowering{" "}
-        <mark className="px-3 py-1 text-white bg-primary/75 rounded-sm">
+        <mark className="px-3 py-1 text-white bg-accent/75 rounded-sm">
           Digital
         </mark>{" "}
         Experiences
@@ -254,8 +261,10 @@ export const parallaxSectionContent = {
     headline: "Build A Website That Grows With Your Business",
     paragraph: `At ${business.name}, we design digital experiences that scale with your goals. Our websites are crafted to be fast, intuitive, and ready to impress—from launch day to your next big milestone.`,
     subheadline: "Ready To Launch A Website That Works As Hard As You Do?",
-    buttonText: "Start Your Project Today",
-    buttonLink: "/contact",
+    button: {
+      text: "Start Your Project Today",
+      link: "/contact",
+    },
   },
 };
 
@@ -310,7 +319,10 @@ export const processContent = {
     heading:
       "Turning Your Vision Into Reality with a Proven Web Development Process",
     paragraph: `At ${business.name}, we follow a proven, streamlined approach to website design and development. Every step is carefully crafted to ensure timely delivery, flawless execution, and outstanding results for your business.`,
-    image: "/images/website-process.jpg", // Update to your real image path
+    image: {
+      publicId: "pixel-n-code/content-images/creative-workspace-stages",
+      alt: "Modern digital workspace showing website development stages with a laptop displaying code, a sketchbook with wireframes, colorful post-it notes, and a tablet mockup.",
+    }, // Update to your real image path
     steps: [
       {
         icon: "FaFileAlt",

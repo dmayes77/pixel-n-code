@@ -11,7 +11,9 @@ export default function TextImageSection({ content }) {
   return (
     <section>
       <div className="max-w-7xl mx-auto ">
-        <h2 className="text-primary text-center">{heading}</h2>
+        <h2 className="text-primary text-center mobile:max-w-sm fold:max-w-xl laptop:max-w-3xl desktop:max-w-4xl mx-auto">
+          {heading}
+        </h2>
         <div className="flex mobile:flex-col laptop:flex-row items-start tablet:items-center gap-8 w-full">
           {/* Text Content */}
           <div className="w-full laptop:w-1/2 space-y-6">

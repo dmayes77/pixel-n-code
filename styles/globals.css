@@ -28,19 +28,19 @@
     @apply mb-10 mobile:text-2xl tablet:text-3xl laptop:text-4xl desktop:text-5xl font-extrabold leading-none tracking-tight;
   }
   h3 {
-    @apply mb-4 mobile:text-xl tablet:text-2xl laptop:text-3xl desktop:text-4xl font-bold leading-snug tracking-tight;
+    @apply mb-4 mobile:text-lg tablet:text-xl laptop:text-2xl desktop:text-3xl font-bold leading-snug tracking-tight;
   }
   h4 {
-    @apply mb-3 mobile:text-lg tablet:text-xl laptop:text-2xl desktop:text-3xl font-semibold leading-snug tracking-tight;
+    @apply mb-3 mobile:text-base tablet:text-lg laptop:text-xl desktop:text-2xl font-semibold leading-snug tracking-tight;
   }
   h5 {
-    @apply mb-2 mobile:text-base tablet:text-lg laptop:text-xl desktop:text-2xl font-semibold leading-snug tracking-tight;
+    @apply mb-2 mobile:text-sm tablet:text-base laptop:text-lg desktop:text-xl font-semibold leading-snug tracking-tight;
   }
   h6 {
-    @apply mb-1 mobile:text-sm tablet:text-base laptop:text-lg desktop:text-xl font-semibold leading-snug tracking-tight;
+    @apply mb-1 mobile:text-xs tablet:text-sm laptop:text-base desktop:text-lg font-semibold leading-snug tracking-tight;
   }
   p {
-    @apply mb-4 mobile:text-sm tablet:text-base laptop:text-lg desktop:text-xl leading-relaxed;
+    @apply mb-4 mobile:text-sm laptop:text-base desktop:text-lg leading-relaxed;
   }
   section {
     @apply w-full px-4 py-12;
@@ -99,7 +99,7 @@
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
   --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: #28299e;
+  --accent: #1599fa;
   --accent-foreground: oklch(0.984 0.003 247.858);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.929 0.013 255.508);

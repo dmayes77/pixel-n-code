@@ -1,17 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import { Button } from "@/components/ui/button"; // adjust path if needed!
 
 export default function ParallaxSection({ content }) {
-  if (!content) return null; // Always good to guard against missing content
+  if (!content) return null;
 
   const {
     backgroundImage,
     headline,
     paragraph,
     subheadline,
-    buttonText,
-    buttonLink,
+    button,
   } = content;
 
   return (
@@ -21,15 +21,19 @@ export default function ParallaxSection({ content }) {
         backgroundImage: `url('${backgroundImage}')`,
       }}
     >
-      <div className="bg-black/60 backdrop-blur-sm p-8 rounded-lg max-w-3xl text-white space-y-6">
+      <div className="bg-accent/60 backdrop-blur-sm p-8 rounded-lg max-w-3xl text-white space-y-6">
         <h2>{headline}</h2>
         <p>{paragraph}</p>
         <h3>{subheadline}</h3>
-        <Link href={buttonLink}>
-          <button className="mt-4 px-6 py-3 bg-primary hover:bg-primary/90 rounded-full font-bold">
-            {buttonText}
-          </button>
-        </Link>
+
+        <Button
+          asChild
+          className="text-sm font-semibold text-primary-foreground hover:text-primary !no-underline"
+        >
+          <Link href={button.link}>
+            {button.text} <span aria-hidden="true">→</span>
+          </Link>
+        </Button>
       </div>
     </section>
   );
