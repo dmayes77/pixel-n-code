@@ -43,13 +43,9 @@ export default function HeroSection({ content }) {
             </div>
           )}
 
-          <h1 className="text-4xl fold:text-5xl tablet:text-6xl laptop:text-7xl font-bold leading-tight tracking-tight">
-            {headline}
-          </h1>
+          <h1>{headline}</h1>
 
-          <p className="mt-4 text-base fold:text-lg tablet:text-xl font-medium text-primary-foreground">
-            {subheadline}
-          </p>
+          <p className="text-primary-foreground">{subheadline}</p>
 
           {/* CTAs */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">

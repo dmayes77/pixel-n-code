@@ -7,37 +7,43 @@
   --breakpoint-*: initial; /* Resets all default Tailwind breakpoints */
 
   /* Define your new custom breakpoints */
-  --breakpoint-mobile: 0rem;        /* 0px */
-  --breakpoint-fold: 26.875rem;     /* 430px = large phones & foldables (folded) */
-  --breakpoint-tablet: 48rem;        /* 768px */
-  --breakpoint-laptop: 64rem;        /* 1024px */
-  --breakpoint-desktop: 80rem;  
+  --breakpoint-mobile: 0rem; /* 0px */
+  --breakpoint-fold: 26.875rem; /* 430px = large phones & foldables (folded) */
+  --breakpoint-tablet: 48rem; /* 768px */
+  --breakpoint-laptop: 64rem; /* 1024px */
+  --breakpoint-desktop: 80rem;
 }
 
 @layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
   h1 {
-    @apply mb-4 text-4xl font-extrabold leading-none tracking-tight
-           tablet:text-5xl laptop:text-6xl;
+    @apply mb-4 mobile:text-4xl tablet:text-5xl laptop:text-6xl desktop:text-7xl font-extrabold leading-none tracking-tight;
   }
   h2 {
-    @apply mb-4 text-3xl font-extrabold leading-none tracking-tight
-           tablet:text-4xl laptop:text-5xl;
+    @apply mb-10 mobile:text-2xl tablet:text-3xl laptop:text-4xl desktop:text-5xl font-extrabold leading-none tracking-tight;
   }
   h3 {
-    @apply mb-4 text-2xl font-bold leading-snug tracking-tight
-           tablet:text-3xl laptop:text-4xl;
+    @apply mb-4 mobile:text-xl tablet:text-2xl laptop:text-3xl desktop:text-4xl font-bold leading-snug tracking-tight;
   }
   h4 {
-    @apply mb-3 text-xl font-semibold leading-snug tracking-tight
-           tablet:text-2xl laptop:text-3xl;
+    @apply mb-3 mobile:text-lg tablet:text-xl laptop:text-2xl desktop:text-3xl font-semibold leading-snug tracking-tight;
   }
   h5 {
-    @apply mb-2 text-lg font-semibold leading-snug tracking-tight
-           tablet:text-xl laptop:text-2xl;
+    @apply mb-2 mobile:text-base tablet:text-lg laptop:text-xl desktop:text-2xl font-semibold leading-snug tracking-tight;
   }
   h6 {
-    @apply mb-1 text-base font-semibold leading-snug tracking-tight
-           tablet:text-lg laptop:text-xl;
+    @apply mb-1 mobile:text-sm tablet:text-base laptop:text-lg desktop:text-xl font-semibold leading-snug tracking-tight;
+  }
+  p {
+    @apply mb-4 mobile:text-sm tablet:text-base laptop:text-lg desktop:text-xl leading-relaxed;
+  }
+  section {
+    @apply w-full px-4 py-12;
   }
 }
 
@@ -149,12 +155,6 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
 }
 
 .perspective {
