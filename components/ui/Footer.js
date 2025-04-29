@@ -18,7 +18,7 @@ export default function Footer({ content }) {
         {/* Logo & Tagline */}
         <div>
           <div className="flex flex-col fold:flex-row items-end fold:space-x-4 mb-2 gap-2">
-            <div className="relative w-[60px] h-[70px] mx-auto fold:mx-0">
+            <div className="relative w-[70px] h-[100px] mx-auto fold:mx-0">
               <CloudImage
                 publicId={logo.publicId.logoOnly}
                 alt={logo.alt}
@@ -30,7 +30,7 @@ export default function Footer({ content }) {
               href="/"
               className="text-center fold:text-left text-xl font-bold text-white mt-2 fold:mt-0"
             >
-              {name}
+              <h4>{name}</h4>
             </NavLink>
           </div>
           <p className="text-sm text-gray-400 text-center fold:text-left">
@@ -40,7 +40,7 @@ export default function Footer({ content }) {
 
         {/* Quick Links */}
         <div>
-          <p className="mb-4 text-xl font-semibold text-white">Quick Links</p>
+          <h4 className="mb-4 text-white">Quick Links</h4>
           <ul className="space-y-2">
             {navItems.map((item) => (
               <li key={item.href}>
@@ -53,18 +53,18 @@ export default function Footer({ content }) {
         </div>
 
         {/* Contact Info */}
-        <div>
-          <p className="mb-4 text-xl font-semibold text-white">Contact</p>
-          <p className="flex items-center">
+        <div className="text-white">
+          <h4 className="mb-4 text-white">Contact</h4>
+          <p className="flex items-center text-sm">
             <HiPhone className="w-5 h-5 text-primary mr-2" />
             <span>{phone}</span>
           </p>
-          <p className="mt-2">Mon–Sat: 8 AM–6 PM</p>
+          <p className="mt-2 text-sm">Mon–Sat: 8 AM–6 PM</p>
         </div>
 
         {/* Social Media */}
         <div>
-          <p className="mb-4 text-xl font-semibold text-white">Follow Us</p>
+          <h4 className="mb-4 text-white">Follow Us</h4>
           <div className="flex justify-center fold:justify-start space-x-4">
             {social?.facebook && (
               <NavLink
