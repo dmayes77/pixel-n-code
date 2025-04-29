@@ -14,11 +14,11 @@ export default function Footer({ content }) {
 
   return (
     <footer className="bg-gray-800 text-gray-200 py-12">
-      <div className="mx-auto px-4 grid grid-cols-1 tablet:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 tablet:grid-cols-4 gap-12">
         {/* Logo & Tagline */}
         <div>
-          <div className="flex flex-col fold:flex-row fold:items-end fold:space-x-4 mb-4">
-            <div className="relative w-[60px] h-[60px] mx-auto fold:mx-0">
+          <div className="flex flex-col fold:flex-row items-end fold:space-x-4 mb-2 gap-2">
+            <div className="relative w-[60px] h-[70px] mx-auto fold:mx-0">
               <CloudImage
                 publicId={logo.publicId.logoOnly}
                 alt={logo.alt}
