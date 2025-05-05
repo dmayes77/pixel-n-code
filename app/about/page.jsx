@@ -1,16 +1,15 @@
-import { logoImages } from "@/constants/images";
-import BrandLogo from "@/components/ui/BrandLogo";
-import * as pageContent from "./servicesPageContent";
+import { logo } from "@/content/globals";
 import HeroSection from "@/components/sections/HeroSection";
+import * as pageContent from "@/content/pages/about";
 
-export default function ServicePage() {
+export default function AboutPage() {
   return (
     <>
       <HeroSection content={pageContent.heroContent} />
       <div className="flex flex-col items-center justify-center min-h-screen">
         <BrandLogo
-          image={logoImages.main.src}
-          alt={logoImages.main.alt}
+          image={logo.publicId.longFormat}
+          alt={logo.alt}
           ratio={4 / 3}
           width="w-[450px]"
         />

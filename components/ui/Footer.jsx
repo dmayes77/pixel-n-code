@@ -2,7 +2,7 @@
 
 import NavLink from "@/components/ui/NavLink";
 import NextLink from "next/link";
-import CloudImage from "./CloudImage";
+import BrandLogo from "./BrandLogo";
 import {
   FaFacebook,
   FaInstagram,
@@ -17,7 +17,8 @@ import {
   HiOutlineLocationMarker,
   HiGlobeAlt,
 } from "react-icons/hi";
-import { businessInfo as business, navItems } from "@/content/globals";
+import { businessInfo as business } from "@/content/globals";
+import { navItems } from "@/content/navigation";
 
 export default function Footer() {
   const {
@@ -34,25 +35,18 @@ export default function Footer() {
   } = business;
 
   return (
-    <footer className="bg-gray-800 text-gray-200 py-12">
+    <footer className="bg-gray-800 text-gray-200 py-12 w-full">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 tablet:grid-cols-5 gap-12">
         {/* 1) Logo & Tagline */}
         <div>
           <div className="flex flex-col fold:flex-row items-end fold:space-x-4 mb-2 gap-2">
-            <div className="relative w-[70px] h-[100px] mx-auto fold:mx-0">
-              <CloudImage
-                publicId={logo.publicId.logoOnly}
-                alt={logo.alt}
-                className="object-contain"
-                fill
-              />
-            </div>
-            <NavLink
+            <BrandLogo
               href="/"
-              className="text-center fold:text-left text-xl font-bold text-white mt-2 fold:mt-0"
-            >
-              <h4>{name}</h4>
-            </NavLink>
+              image={logo.main.publicId}
+              alt={logo.main.alt}
+              ratio={2 / 1}
+              width="w-[200px]"
+            />
           </div>
           <p className="text-sm text-gray-400 text-center fold:text-left">
             {tagline}

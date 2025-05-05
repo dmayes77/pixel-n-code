@@ -1,11 +1,4 @@
 const images = {
-  logo: {
-    main: {
-      src: "pixel-n-code/logo-images/pixel-n-code-logo",
-      alt: "Pixel & Code Logo",
-    },
-  },
-
   glry: {
     glryImage01: {
       src: "/images/glry-01.webp",
@@ -33,7 +26,6 @@ const images = {
   },
 };
 
-export default images;
-export const logoImages = images.logo;
 export const glryImages = images.glry;
 export const bkgdImages = images.bkgd;
+export const blogImages = images.blog;

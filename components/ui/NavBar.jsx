@@ -4,22 +4,22 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import BrandLogo from "./BrandLogo";
 import NavLink from "./NavLink";
-import { navItems, businessInfo as business } from "@/content/globals";
+import { businessInfo as business, logo } from "@/content/globals";
+import { navItems } from "@/content/navigation";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
-  const { logo } = business;
 
   return (
     <header className="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-gray-200 shadow-md">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-8 ">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-8 py-2 ">
         {/* Logo */}
         <BrandLogo
           href="/"
-          image={logo.publicId.longFormat}
-          alt={logo.alt}
-          ratio={3 / 1}
-          width="w-[200px]"
+          image={logo.main.publicId}
+          alt={logo.main.alt}
+          ratio={2 / 1}
+          width="w-[100px]"
         />
 
         {/* Desktop nav */}
@@ -50,8 +50,8 @@ export default function NavBar() {
         <DialogPanel className="fixed inset-0 z-60 bg-white p-6">
           <div className="flex justify-between items-center">
             <BrandLogo
-              image={logo.publicId.longFormat}
-              alt={logo.alt}
+              image={logo.main.publicId}
+              alt={logo.main.alt}
               size={50}
             />
             <button onClick={() => setOpen(false)} aria-label="Close menu">

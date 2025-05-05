@@ -1,6 +1,6 @@
 "use client";
 import NextLink from "next/link";
-import CloudImage from "./CloudImage";
+import CloudImage from "./CloudImage.jsx";
 import { AspectRatio } from "./aspect-ratio.jsx";
 
 // BrandLogo with configurable size via `size` prop (defaults to 12)

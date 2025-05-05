@@ -5,12 +5,11 @@ import ServicesOverview from "@/components/sections/ServicesOverview";
 import TextImageSection from "@/components/sections/TextImageSection";
 import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
 import BrandLogo from "@/components/ui/BrandLogo";
-import * as pageContent from "./homePageContent";
-import { businessInfo as business } from "@/content/globals";
+import * as pageContent from "../content/pages/home";
+import { businessInfo as business, logo } from "@/content/globals";
 import HeroSection from "@/components/sections/HeroSection";
 
 export default function Home() {
-  const { logo } = business;
   return (
     <>
       <HeroSection content={pageContent.heroContent} />
@@ -21,8 +20,8 @@ export default function Home() {
         <WhyChooseUsSection content={pageContent.whyChooseUsContent} />
         <ProcessSection content={pageContent.processContent} />
         <BrandLogo
-          image={logo.publicId.shortFormat}
-          alt={logo.alt}
+          image={logo.main.publicId}
+          alt={logo.main.alt}
           ratio={4 / 3}
           width="w-100"
         />
