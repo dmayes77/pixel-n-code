@@ -41,15 +41,25 @@ export const businessInfo = {
 
   logo: {
     main: {
-      publicId: "pixel-n-code/logo-images/logo-new",
-      url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1746475917/pixel-n-code/logo-images/logo-new.png",
-      alt: "Code & Pixel Logo",
+      publicId: "pixel-n-code/logo-images/Code_Maze_Long_Logo",
+      url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1746738304/pixel-n-code/logo-images/Code_Maze_Long_Logo.png",
+      alt: "Code Maze Logo",
+    },
+    badge: {
+      publicId: "pixel-n-code/logo-images/Code_Maze_Badge",
+      url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1746738303/pixel-n-code/logo-images/Code_Maze_Badge.png",
+      alt: "Code Maze Logo",
+    },
+    logoOnly: {
+      publicId: "pixel-n-code/logo-images/Code_Maze_Logo",
+      url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1746738303/pixel-n-code/logo-images/Code_Maze_Logo.png",
+      alt: "Code Maze Logo",
     },
   },
 
   // Tie in your brand palette
   brandColors: {
-    primary: "#A8E05F", // primary brand color for CTAs, links, and key UI elements
+    primary: "#f26739", // primary brand color for CTAs, links, and key UI elements
     secondary: "#4CA84C", // secondary tone for supporting actions and subheadings
     accent: "#F5F7C1", // accent hue for subtle highlights, badges, and focus rings
     neutral: "#F5F5F5", // the background canvas for cards, panels, and sections
