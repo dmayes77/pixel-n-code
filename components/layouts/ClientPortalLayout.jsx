@@ -41,9 +41,5 @@ function ClientPortalLayoutContent({ children }) {
 }
 
 export default function ClientPortalLayout({ children }) {
-  return (
-    <BusinessInfoProvider>
-      <ClientPortalLayoutContent>{children}</ClientPortalLayoutContent>
-    </BusinessInfoProvider>
-  );
+  return <ClientPortalLayoutContent>{children}</ClientPortalLayoutContent>;
 }
