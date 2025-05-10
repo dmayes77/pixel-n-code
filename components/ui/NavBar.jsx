@@ -1,35 +1,42 @@
 "use client";
+import { useState, useCallback } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import CloudImage from "./CloudImage";
 import BrandLogo from "./BrandLogo";
 import NavLink from "./NavLink";
-import { businessInfo as business, logo } from "@/content/globals";
+import { logo } from "@/content/globals";
 import { navItems } from "@/content/navigation";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
+  const closeMenu = useCallback(() => setOpen(false), []);
+
+  const renderLinks = (mobile = false) =>
+    navItems.map(({ key, href, label }) => (
+      <NavLink
+        key={key ?? href}
+        href={href}
+        {...(mobile ? { onClick: closeMenu, mobile: true } : undefined)}
+      >
+        {label}
+      </NavLink>
+    ));
 
   return (
     <header className="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-gray-200 shadow-md">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-8 py-2 ">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between py-3 px-6 ">
         {/* Logo */}
-        <BrandLogo
-          href="/"
-          image={logo.main.publicId}
+
+        <CloudImage
+          publicId={logo.main.publicId}
           alt={logo.main.alt}
-          ratio={2 / 1}
-          width="w-[100px]"
+          ratio={4 / 1} // 3:1 aspect
+          className="w-44 tablet:w-60"
         />
 
         {/* Desktop nav */}
-        <div className="hidden laptop:flex laptop:gap-x-8">
-          {navItems.map((item) => (
-            <NavLink key={item.key || item.href} href={item.href}>
-              {item.label}
-            </NavLink>
-          ))}
-        </div>
+        <div className="hidden laptop:flex laptop:gap-x-8">{renderLinks()}</div>
 
         {/* Mobile toggle */}
         <button
@@ -42,11 +49,7 @@ export default function NavBar() {
       </nav>
 
       {/* Mobile menu */}
-      <Dialog
-        open={open}
-        onClose={() => setOpen(false)}
-        className="laptop:hidden"
-      >
+      <Dialog open={open} onClose={closeMenu} className="laptop:hidden">
         <DialogPanel className="fixed inset-0 z-60 bg-white p-6">
           <div className="flex justify-between items-center">
             <BrandLogo
@@ -54,22 +57,12 @@ export default function NavBar() {
               alt={logo.main.alt}
               size={50}
             />
-            <button onClick={() => setOpen(false)} aria-label="Close menu">
+            <button onClick={closeMenu} aria-label="Close menu">
               <XMarkIcon className="h-6 w-6 text-gray-700" />
             </button>
           </div>
-          <nav className="mt-6 space-y-4">
-            {navItems.map((item) => (
-              <NavLink
-                key={item.key || item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                mobile
-              >
-                {item.label}
-              </NavLink>
-            ))}
-          </nav>
+
+          <nav className="mt-6 space-y-4">{renderLinks(true)}</nav>
         </DialogPanel>
       </Dialog>
     </header>

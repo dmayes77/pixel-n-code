@@ -27,13 +27,11 @@ export default function TextImageSection({ content }) {
 
           {/* Image */}
           <div className="mobile:w-full laptop:w-1/2">
-            <AspectRatio ratio={3 / 2}>
-              <CloudImage
-                publicId={image.src}
-                alt={image.alt}
-                objectFit="cover"
-              />
-            </AspectRatio>
+            <CloudImage
+              publicId={image.src}
+              alt={image.alt}
+              objectFit="cover"
+            />
           </div>
         </div>
       </div>

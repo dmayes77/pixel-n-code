@@ -3,19 +3,23 @@
 import { CldImage } from "next-cloudinary";
 
 export default function CloudImage({
-  publicId, // The Cloudinary public ID of your image
+  publicId,
   alt,
-  objectFit = "", // Cloudinary transformation string
+  ratio = 1, // e.g. 3/1, 4/3
+  objectFit = "contain",
+  className = "", // width classes go here
   ...props
 }) {
   return (
-    <CldImage
-      src={publicId}
-      alt={alt}
-      fill
-      style={{ objectFit: objectFit }}
-      quality={80}
-      {...props}
-    />
+    <div className={`relative ${className}`} style={{ aspectRatio: ratio }}>
+      <CldImage
+        src={publicId}
+        alt={alt}
+        fill
+        quality={80}
+        style={{ objectFit }}
+        {...props}
+      />
+    </div>
   );
 }

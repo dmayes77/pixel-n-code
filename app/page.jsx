@@ -8,6 +8,7 @@ import BrandLogo from "@/components/ui/BrandLogo";
 import * as pageContent from "../content/pages/home";
 import { businessInfo as business, logo } from "@/content/globals";
 import HeroSection from "@/components/sections/HeroSection";
+import CloudImage from "@/components/ui/CloudImage";
 
 export default function Home() {
   return (
@@ -19,12 +20,18 @@ export default function Home() {
         <ParallaxSection content={pageContent.parallaxSectionContent} />
         <WhyChooseUsSection content={pageContent.whyChooseUsContent} />
         <ProcessSection content={pageContent.processContent} />
-        <BrandLogo
-          image={logo.main.publicId}
-          alt={logo.main.alt}
-          ratio={4 / 3}
-          width="w-100"
-        />
+        <div className="p-4 w-full max-w-sm">
+          <CloudImage
+            publicId={logo.main.publicId}
+            alt={logo.main.alt}
+            objectFit="contain"
+          />
+          <CloudImage
+            publicId={logo.badge.publicId}
+            alt={logo.badge.alt}
+            objectFit="contain"
+          />
+        </div>
       </div>
     </>
   );

@@ -33,17 +33,13 @@ export default function ProcessSection({ content }) {
           {/* Left: Paragraph + Image */}
           <div className="mobile:w-full laptop:w-1/2 space-y-8">
             <p className="text-gray-600">{paragraph}</p>
-            <AspectRatio
-              ratio={1 / 1}
-              className="rounded-lg shadow-md overflow-hidden"
-            >
-              <CloudImage
-                publicId={image.publicId}
-                alt={image.alt}
-                objectFit="cover"
-                className="object-cover"
-              />
-            </AspectRatio>
+
+            <CloudImage
+              publicId={image.publicId}
+              alt={image.alt}
+              objectFit="cover"
+              className="object-cover"
+            />
           </div>
 
           {/* Right: Steps */}
@@ -66,7 +62,9 @@ export default function ProcessSection({ content }) {
                   {/* Icon and Line */}
                   <div className="flex flex-col items-center">
                     <div className="bg-primary p-4 rounded-full">
-                      {Icon && <Icon className="text-white mobile:text-lg tablet:text-xl laptop:text-2xl" />}
+                      {Icon && (
+                        <Icon className="text-white mobile:text-lg tablet:text-xl laptop:text-2xl" />
+                      )}
                     </div>
                     {index !== steps.length - 1 && (
                       <div className="h-full w-px bg-gray-300 mt-2"></div>

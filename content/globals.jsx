@@ -28,31 +28,42 @@ export const businessInfo = {
   },
 
   socials: {
-    facebook: "https://facebook.com/codemaze",
-    instagram: "https://instagram.com/codemaze",
-    linkedin: "https://linkedin.com/company/codemaze",
-    twitter: "https://twitter.com/codemaze",
-    youtube: "https://youtube.com/codemaze",
-    tiktok: "https://tiktok.com/@codemaze",
-    pinterest: "https://pinterest.com/codemaze",
-    github: "https://github.com/codemaze",
-    yelp: "https://yelp.com/biz/codemaze",
+    google: { url: "https://google.com/codemaze", iconName: "FaGoogle" },
+    facebook: {
+      url: "https://facebook.com/codemaze",
+      iconName: "FaFacebookF",
+    },
+    instagram: {
+      url: "https://instagram.com/codemaze",
+      iconName: "ImInstagram",
+    },
+    twitter: { url: "https://twitter.com/codemaze", iconName: "BsTwitterX" },
   },
 
   logo: {
     main: {
-      publicId: "pixel-n-code/logo-images/Code_Maze_Long_Logo",
-      url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1746738304/pixel-n-code/logo-images/Code_Maze_Long_Logo.png",
+      publicId: "pixel-n-code/logo-images/code-maze-logo-main",
+      url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1746738303/pixel-n-code/logo-images/code-maze-logo-main.png",
+      alt: "Code Maze Logo",
+    },
+    mainWhite: {
+      publicId: "pixel-n-code/logo-images/code-maze-logo-white",
+      url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1746738303/pixel-n-code/logo-images/code-maze-logo-white.png",
       alt: "Code Maze Logo",
     },
     badge: {
-      publicId: "pixel-n-code/logo-images/Code_Maze_Badge",
-      url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1746738303/pixel-n-code/logo-images/Code_Maze_Badge.png",
+      publicId: "pixel-n-code/logo-images/code-maze-badge",
+      url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1746738303/pixel-n-code/logo-images/code-maze-badge.png",
+      alt: "Code Maze Logo",
+    },
+    badgeWhite: {
+      publicId: "pixel-n-code/logo-images/code-maze-badge-white",
+      url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1746738303/pixel-n-code/logo-images/code-maze-badge-white.png",
       alt: "Code Maze Logo",
     },
     logoOnly: {
-      publicId: "pixel-n-code/logo-images/Code_Maze_Logo",
-      url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1746738303/pixel-n-code/logo-images/Code_Maze_Logo.png",
+      publicId: "pixel-n-code/logo-images/code-maze-logo-only",
+      url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1746738303/pixel-n-code/logo-images/code-maze-logo-only.png",
       alt: "Code Maze Logo",
     },
   },

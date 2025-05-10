@@ -24,13 +24,12 @@ export default function ServicesOverview({ content }) {
                 <p>{service.description}</p>
               </div>
               <div className="mobile:w-full tablet:w-1/2">
-                <AspectRatio ratio={7 / 5} className="w-full">
-                  <CloudImage
-                    publicId={service.image.publicId}
-                    alt={service.image.alt}
-                    className="object-cover"
-                  />
-                </AspectRatio>
+                <CloudImage
+                  publicId={service.image.publicId}
+                  alt={service.image.alt}
+                  ratio={16 / 9} // 16:9 aspect ratio
+                  objectFit="cover"
+                />
               </div>
             </div>
           ))}

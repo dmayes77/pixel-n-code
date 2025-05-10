@@ -18,13 +18,12 @@ export default function HeroSection({ content }) {
           <CloudImage
             publicId={image.publicId}
             alt={image.alt}
-            fill
-            className="object-cover object-center"
+            objectFit="cover"
           />
         </div>
 
         {/* Overlay for better text legibility */}
-        <div className="absolute inset-0 bg-gray-900/70" />
+        <div className="absolute inset-0 bg-gray-900/70  backdrop-blur-xs" />
       </div>
 
       {/* Content */}
