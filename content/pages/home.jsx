@@ -19,6 +19,7 @@ export const heroContent = {
     link: { label: "Learn More", href: "/#services" },
   },
   image: {
+    url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1745786777/pixel-n-code/hero-images/pixel-home.webp",
     publicId: "pixel-n-code/hero-images/pixel-home",
     alt: "Laptop on desk displaying a modern web app interface, with code snippets in background",
   },

@@ -82,15 +82,15 @@ export const businessInfo = {
   paymentMethods: ["Visa", "Mastercard", "Amex", "PayPal"],
 
   // If you use an online scheduler
-  bookingUrl: "https://pixelncode.io/book",
+  bookingUrl: "https://getcodemaze.com/book",
 
   // This can power your meta tags or footer links
   privacyPolicyUrl: "/privacy-policy",
   termsOfServiceUrl: "/terms-of-service",
 
   designCompany: {
-    name: "Code & Pixel Web Design",
-    url: "https://pixelncode.io",
+    name: "Code Maze Web Design",
+    url: "https://getcodemaze.com",
   },
 };
 

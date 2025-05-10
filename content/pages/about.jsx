@@ -18,6 +18,7 @@ export const heroContent = {
     link: { label: "Learn More", href: "/#about" },
   },
   image: {
+    url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1745797672/pixel-n-code/hero-images/pixel-about.webp",
     publicId: "pixel-n-code/hero-images/pixel-about",
     alt: "Team brainstorming in a modern office environment",
   },
