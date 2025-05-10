@@ -7,10 +7,10 @@ import ConversionsCard from "@/components/analytics/ConversionsCard";
 import TopPagesCard from "@/components/analytics/TopPagesCard";
 import UserEngagementCard from "@/components/analytics/UserEngagementCard";
 import LiveVisitorsCard from "@/components/analytics/LiveVisitorsCard";
-import { useBusinessInfo } from "@/context/BusinessInfoContext";
+import { businessInfo as business } from "@/content/globals";
 
 export default function AnalyticsPage() {
-  const { name, ...attr } = useBusinessInfo();
+  const { name, ...attr } = business;
   return (
     <div className="min-h-screen w-full bg-gray-50 py-8 px-4 mobile:px-6 laptop:px-8">
       <div className="max-w-7xl mx-auto space-y-8">
