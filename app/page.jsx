@@ -9,6 +9,7 @@ import * as pageContent from "../content/pages/home";
 import { businessInfo as business, logo } from "@/content/globals";
 import HeroSection from "@/components/sections/HeroSection";
 import CloudImage from "@/components/ui/CloudImage";
+import TechStackSection from "@/components/sections/TechStackSection";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center min-h-screen space-y-16">
         <TextImageSection content={pageContent.textImageSectionContent} />
         <ServicesOverview content={pageContent.servicesOverviewContent} />
+        <TechStackSection content={pageContent.techStackContent} />
         <ParallaxSection content={pageContent.parallaxSectionContent} />
         <WhyChooseUsSection content={pageContent.whyChooseUsContent} />
         <ProcessSection content={pageContent.processContent} />

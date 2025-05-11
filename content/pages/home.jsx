@@ -1,4 +1,13 @@
 import { businessInfo as business } from "@/content/globals";
+import {
+  SiNextdotjs,
+  SiTailwindcss,
+  SiCloudinary,
+  SiStrapi,
+  SiVercel,
+  SiShadcnui,
+} from "react-icons/si";
+
 
 export const heroContent = {
   headline: (
@@ -179,4 +188,47 @@ export const processContent = {
   ],
   buttonText: "Hire Our Team Of Web Experts!",
   buttonLink: "/contact",
+};
+
+export const techStackContent = {
+  title: "Our Tech Stack",
+  subtitle: "Cutting‑edge tools powering every Code Maze site",
+  stacks: [
+    {
+      name: "Next.js",
+      Icon: SiNextdotjs,
+      description:
+        "Next.js gives us server‑side rendering and static exports for blazing FAST sites.",
+    },
+    {
+      name: "Tailwind CSS",
+      Icon: SiTailwindcss,
+      description:
+        "Tailwind lets us rapidly build custom UIs without leaving your HTML.",
+    },
+    {
+      name: "shadcn/ui",
+      Icon: SiShadcnui,
+      description:
+        "shadcn/ui provides ready‑made React components styled with Tailwind.",
+    },
+    {
+      name: "Cloudinary",
+      Icon: SiCloudinary,
+      description:
+        "Cloudinary handles optimized image delivery and transformation at scale.",
+    },
+    {
+      name: "Strapi",
+      Icon: SiStrapi,
+      description:
+        "Strapi gives us a headless CMS that’s easy to customize and secure.",
+    },
+    {
+      name: "Vercel",
+      Icon: SiVercel,
+      description:
+        "Vercel deploys our sites globally with zero‑config previews.",
+    },
+  ],
 };
