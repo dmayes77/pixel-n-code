@@ -10,6 +10,7 @@ import { businessInfo as business, logo } from "@/content/globals";
 import HeroSection from "@/components/sections/HeroSection";
 import CloudImage from "@/components/ui/CloudImage";
 import TechStackSection from "@/components/sections/TechStackSection";
+import CTASection from "@/components/sections/CTASection";
 
 export default function Home() {
   return (
@@ -22,18 +23,7 @@ export default function Home() {
         <ParallaxSection content={pageContent.parallaxSectionContent} />
         <WhyChooseUsSection content={pageContent.whyChooseUsContent} />
         <ProcessSection content={pageContent.processContent} />
-        <div className="p-4 w-full max-w-sm">
-          <CloudImage
-            publicId={logo.main.publicId}
-            alt={logo.main.alt}
-            objectFit="contain"
-          />
-          <CloudImage
-            publicId={logo.badge.publicId}
-            alt={logo.badge.alt}
-            objectFit="contain"
-          />
-        </div>
+        <CTASection content={pageContent.ctaContent} />
       </div>
     </>
   );

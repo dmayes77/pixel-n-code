@@ -35,7 +35,7 @@ export default function Footer() {
   } = business;
 
   return (
-    <footer className="bg-gray-800 text-gray-200 py-12 w-full">
+    <footer className="bg-secondary text-secondary-foreground py-12 w-full">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-4 gap-x-8 gap-y-12">
         {/* 1) Logo / Tagline / Socials */}
         <div>
