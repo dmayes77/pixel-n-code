@@ -4,6 +4,7 @@ import MainLayout from "@/components/layouts/MainLayout";
 import ClientPortalLayout from "@/components/layouts/ClientPortalLayout";
 import "@/styles/globals.css";
 import { usePathname } from "next/navigation";
+import ChatWidget from "@/components/ui/ChatWidget";
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
         ) : (
           <MainLayout>{children}</MainLayout>
         )}
+        <ChatWidget />
       </body>
     </html>
   );

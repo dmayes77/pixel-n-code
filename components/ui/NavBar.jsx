@@ -7,6 +7,7 @@ import BrandLogo from "./BrandLogo";
 import NavLink from "./NavLink";
 import { logo } from "@/content/globals";
 import { navItems } from "@/content/navigation";
+import Link from "next/link";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
@@ -27,13 +28,14 @@ export default function NavBar() {
     <header className="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-gray-200 shadow-md">
       <nav className="mx-auto flex max-w-7xl items-center justify-between py-3 px-6 ">
         {/* Logo */}
-
-        <CloudImage
-          publicId={logo.main.publicId}
-          alt={logo.main.alt}
-          ratio={4 / 1} // 3:1 aspect
-          className="w-44 tablet:w-60"
-        />
+        <Link href="/" className="flex items-center">
+          <CloudImage
+            publicId={logo.main.publicId}
+            alt={logo.main.alt}
+            ratio={4 / 1} // 3:1 aspect
+            className="w-44 tablet:w-60"
+          />
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden laptop:flex laptop:gap-x-8">{renderLinks()}</div>

@@ -21,11 +21,11 @@ export const heroContent = {
   ),
   subheadline:
     "We build scalable, high-performance web applications that bring your brand vision to life—fast, secure, and mobile-first.",
-  cta: { label: "Get Started", href: "/#contact" },
-  secondaryCta: { label: "About Us", href: "/#about" },
+  cta: { label: "Get Started", href: "/contact" },
+  secondaryCta: { label: "About Us", href: "/about" },
   announcement: {
-    text: "Custom Website packages starting at $497!",
-    link: { label: "Learn More", href: "/#services" },
+    text: "Website packages starting at $497!",
+    link: { label: "Learn More", href: "/services" },
   },
   image: {
     url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1745786777/pixel-n-code/hero-images/pixel-home.webp",
@@ -237,5 +237,5 @@ export const ctaContent = {
   title: "Ready to launch your next project?",
   subtitle: "Let’s collaborate to build a custom website that drives results.",
   buttonText: "Start My Project",
-  buttonLink: "/#contact",
+  buttonLink: "/questionnaire",
 };

@@ -15,7 +15,7 @@ export default function CTASection({ content }) {
         {subtitle && <p className="text-lg mb-8">{subtitle}</p>}
         <Link
           href={buttonLink}
-          className="inline-block px-8 py-3 bg-secondary text-secondary-foreground font-medium rounded-md hover:bg-gray-100"
+          className="inline-block px-8 py-3 bg-secondary text-secondary-foreground font-medium rounded-md hover:bg-secondary-foreground hover:text-secondary transition duration-300"
         >
           {buttonText}
         </Link>
