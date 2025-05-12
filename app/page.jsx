@@ -8,6 +8,7 @@ import TextImageSection from "@/components/sections/TextImageSection";
 import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
 import * as pageContent from "@/content/pages/home";
 
+
 export default function HomePage() {
   return (
     <>

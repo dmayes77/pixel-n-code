@@ -1,5 +1,4 @@
 // app/questionnaire/page.jsx
-"use client";
 import QuestionnaireEmbed from "@/components/sections/QuestionnaireEmbed";
 
 export default function QuestionnaireWizard() {

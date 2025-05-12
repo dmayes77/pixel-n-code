@@ -1,7 +1,8 @@
 // app/layout.jsx
 import "@/styles/globals.css";
-import { metadata, structuredData, logo } from "@/content/globals";
+import { structuredData, logo } from "@/content/globals";
 import AppLayout from "@/components/layouts/AppLayout";
+import { metadata } from "@/content/globals";
 
 export { metadata };
 

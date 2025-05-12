@@ -1,7 +1,4 @@
 // app/pages/AnalyticsPage.jsx
-
-"use client";
-
 import TrafficSourcesCard from "@/components/analytics/TrafficSourcesCard";
 import ConversionsCard from "@/components/analytics/ConversionsCard";
 import TopPagesCard from "@/components/analytics/TopPagesCard";
