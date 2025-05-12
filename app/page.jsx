@@ -1,18 +1,14 @@
-"use client";
+import CTASection from "@/components/sections/CTASection";
+import HeroSection from "@/components/sections/HeroSection";
 import ParallaxSection from "@/components/sections/ParallaxSection";
 import ProcessSection from "@/components/sections/ProcessSection";
 import ServicesOverview from "@/components/sections/ServicesOverview";
+import TechStackSection from "@/components/sections/TechStackSection";
 import TextImageSection from "@/components/sections/TextImageSection";
 import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
-import BrandLogo from "@/components/ui/BrandLogo";
-import * as pageContent from "../content/pages/home";
-import { businessInfo as business, logo } from "@/content/globals";
-import HeroSection from "@/components/sections/HeroSection";
-import CloudImage from "@/components/ui/CloudImage";
-import TechStackSection from "@/components/sections/TechStackSection";
-import CTASection from "@/components/sections/CTASection";
+import * as pageContent from "@/content/pages/home";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <HeroSection content={pageContent.heroContent} />

@@ -1,9 +1,16 @@
 // constants/content.js
 
-//Business Info
+/**
+ * Core business information for Code Maze Web Design.
+ * This file exports businessInfo, logo, socials, metadata, and structuredData for SEO and JSON-LD.
+ */
+
+// Business Info
 export const businessInfo = {
   name: "Code Maze Web Design",
   tagline: "Vision Meets Function",
+  description:
+    "Custom web design and development for businesses that want modern, responsive sites designed to convert.",
   phone: "(423) 497-0881",
   email: "info@getcodemaze.com",
   website: "https://getcodemaze.com",
@@ -15,24 +22,22 @@ export const businessInfo = {
     zip: "37402",
     latitude: 35.0456,
     longitude: -85.3097,
+    country: "US",
   },
 
   hoursOfOperation: {
-    monday: "9:00 AM – 6:00 PM",
-    tuesday: "9:00 AM – 6:00 PM",
-    wednesday: "9:00 AM – 6:00 PM",
-    thursday: "9:00 AM – 6:00 PM",
-    friday: "9:00 AM – 6:00 PM",
-    saturday: "9:00 AM – 2:00 PM",
+    monday: "09:00-18:00",
+    tuesday: "09:00-18:00",
+    wednesday: "09:00-18:00",
+    thursday: "09:00-18:00",
+    friday: "09:00-18:00",
+    saturday: "09:00-14:00",
     sunday: "Closed",
   },
 
   socials: {
     google: { url: "https://google.com/codemaze", iconName: "FaGoogle" },
-    facebook: {
-      url: "https://facebook.com/codemaze",
-      iconName: "FaFacebookF",
-    },
+    facebook: { url: "https://facebook.com/codemaze", iconName: "FaFacebookF" },
     instagram: {
       url: "https://instagram.com/codemaze",
       iconName: "ImInstagram",
@@ -49,50 +54,143 @@ export const businessInfo = {
     mainWhite: {
       publicId: "pixel-n-code/logo-images/code-maze-logo-white",
       url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1746738303/pixel-n-code/logo-images/code-maze-logo-white.png",
-      alt: "Code Maze Logo",
+      alt: "Code Maze Logo (White)",
     },
     badge: {
       publicId: "pixel-n-code/logo-images/code-maze-badge",
       url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1746738303/pixel-n-code/logo-images/code-maze-badge.png",
-      alt: "Code Maze Logo",
+      alt: "Code Maze Badge",
     },
     badgeWhite: {
       publicId: "pixel-n-code/logo-images/code-maze-badge-white",
       url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1746738303/pixel-n-code/logo-images/code-maze-badge-white.png",
-      alt: "Code Maze Logo",
+      alt: "Code Maze Badge (White)",
     },
     logoOnly: {
       publicId: "pixel-n-code/logo-images/code-maze-logo-only",
       url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1746738303/pixel-n-code/logo-images/code-maze-logo-only.png",
-      alt: "Code Maze Logo",
+      alt: "Code Maze Logo Only",
     },
   },
 
-  // Tie in your brand palette
+  // Brand palette
   brandColors: {
-    primary: "#f26739", // primary brand color for CTAs, links, and key UI elements
-    secondary: "#4CA84C", // secondary tone for supporting actions and subheadings
-    accent: "#F5F7C1", // accent hue for subtle highlights, badges, and focus rings
-    neutral: "#F5F5F5", // the background canvas for cards, panels, and sections
-    text: "#2D2D2D", // the default copy color for maximum readability
+    primary: "#f26739", // CTA and key UI elements
+    secondary: "#4CA84C", // Supporting actions
+    accent: "#F5F7C1", // Highlights and focus
+    neutral: "#F5F5F5", // Background panels
+    text: "#2D2D2D", // Body copy
   },
 
-  // Great for a site footer or JSON‑LD
+  // Additional business metadata
   businessCategory: "Web Design Agency",
   paymentMethods: ["Visa", "Mastercard", "Amex", "PayPal"],
-
-  // If you use an online scheduler
   bookingUrl: "https://getcodemaze.com/book",
-
-  // This can power your meta tags or footer links
   privacyPolicyUrl: "/privacy-policy",
   termsOfServiceUrl: "/terms-of-service",
-
   designCompany: {
     name: "Code Maze Web Design",
     url: "https://getcodemaze.com",
   },
 };
 
+// Convenience exports
 export const logo = businessInfo.logo;
 export const socials = businessInfo.socials;
+
+// Next.js Metadata API config
+export const metadata = {
+  title: businessInfo.name,
+  description: businessInfo.description,
+  openGraph: {
+    title: businessInfo.name,
+    description: businessInfo.description,
+    url: businessInfo.website,
+    siteName: businessInfo.name,
+    images: [
+      {
+        url: businessInfo.logo.main.url,
+        alt: businessInfo.logo.main.alt,
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: businessInfo.name,
+    description: businessInfo.description,
+    images: [businessInfo.logo.main.url],
+  },
+};
+
+// JSON-LD structured data for SEO
+export const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: businessInfo.name,
+  description: businessInfo.description,
+  url: businessInfo.website,
+  logo: businessInfo.logo.logoOnly.url,
+  image: businessInfo.logo.main.url,
+  telephone: businessInfo.phone,
+  email: businessInfo.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: businessInfo.address.street,
+    addressLocality: businessInfo.address.city,
+    addressRegion: businessInfo.address.state,
+    postalCode: businessInfo.address.zip,
+    addressCountry: businessInfo.address.country,
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: businessInfo.address.latitude,
+    longitude: businessInfo.address.longitude,
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Monday",
+      opens: "09:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Tuesday",
+      opens: "09:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Wednesday",
+      opens: "09:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Thursday",
+      opens: "09:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Friday",
+      opens: "09:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "09:00",
+      closes: "14:00",
+    },
+  ],
+  sameAs: Object.values(businessInfo.socials).map((s) => s.url),
+  priceRange: "$$$",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: businessInfo.phone,
+    contactType: "customer support",
+  },
+  areaServed: businessInfo.address.city,
+};
