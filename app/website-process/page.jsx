@@ -1,0 +1,31 @@
+import HeroSection from "@/components/sections/HeroSection";
+import CloudImage from "@/components/ui/CloudImage";
+import { logo } from "@/content/globals";
+import * as pageContent from "@/content/pages/website-process";
+import WebProcessSection from "@/components/sections/WebProcessSection";
+
+export const metadata = pageContent.metadata;
+
+export default function ProcessPage() {
+  return (
+    <>
+      <div className="py-30 px-4 text-center  max-w-5xl mx-auto">
+        <h2 className="text-secondary">Our Website Process</h2>
+        <p className="text-gray-500 font-semibold">
+          There is no one-size-fits-all when it comes to websites because every
+          single business is different in it’s own way. See our process to get a
+          better understanding of what to expect when working with us.
+        </p>
+      </div>
+      <WebProcessSection content={pageContent.processContent} />
+      <div className="flex flex-col items-center justify-center min-h-screen">
+        <CloudImage
+          publicId={logo.main.publicId}
+          alt={logo.main.alt}
+          ratio={4 / 1} // 3:1 aspect
+          className="w-44 tablet:w-60"
+        />
+      </div>
+    </>
+  );
+}

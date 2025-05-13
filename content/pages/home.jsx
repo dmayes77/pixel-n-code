@@ -237,5 +237,5 @@ export const ctaContent = {
   title: "Ready to launch your next project?",
   subtitle: "Let’s collaborate to build a custom website that drives results.",
   buttonText: "Start My Project",
-  buttonLink: "/questionnaire",
+  buttonLink: "/contact",
 };

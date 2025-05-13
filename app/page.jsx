@@ -8,12 +8,11 @@ import TextImageSection from "@/components/sections/TextImageSection";
 import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
 import * as pageContent from "@/content/pages/home";
 
-
 export default function HomePage() {
   return (
     <>
       <HeroSection content={pageContent.heroContent} />
-      <div className="flex flex-col items-center justify-center min-h-screen space-y-16">
+      <div className="flex flex-col items-center justify-center min-h-screen">
         <TextImageSection content={pageContent.textImageSectionContent} />
         <ServicesOverview content={pageContent.servicesOverviewContent} />
         <TechStackSection content={pageContent.techStackContent} />

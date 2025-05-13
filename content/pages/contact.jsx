@@ -1,4 +1,10 @@
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { businessInfo as business } from "@/content/globals";
+
+export const metadata = {
+  title: `Contact Us | ${business.name}`,
+  description: `Get in touch with ${business.name} for custom web design quotes, project consultations, or general inquiries. Our team is ready to assist you!`,
+};
 
 export const heroContent = {
   headline: (
@@ -31,9 +37,13 @@ export const contactContent = {
   subtitle:
     "Ready to start your project? Drop us a line or fill out the form below.",
   contactMethods: [
-    { icon: FaPhone, label: "Phone", value: "(423) 497-0881" },
-    { icon: FaEnvelope, label: "Email", value: "hello@codemaze.com" },
-    { icon: FaMapMarkerAlt, label: "Location", value: "Chattanooga, TN" },
+    { icon: FaPhone, label: "Phone", value: business.phone },
+    { icon: FaEnvelope, label: "Email", value: business.email },
+    {
+      icon: FaMapMarkerAlt,
+      label: "Location",
+      value: `${business.address.city}, ${business.address.state}`,
+    },
   ],
   formFields: [
     { name: "name", type: "text", placeholder: "Your Name" },

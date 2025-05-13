@@ -1,7 +1,9 @@
-import { logo } from "@/content/globals";
-import CloudImage from "@/components/ui/CloudImage";
-import * as pageContent from "../../content/pages/services";
 import HeroSection from "@/components/sections/HeroSection";
+import CloudImage from "@/components/ui/CloudImage";
+import { logo } from "@/content/globals";
+import * as pageContent from "../../content/pages/services";
+
+export const metadata = pageContent.metadata;
 
 export default function ServicePage() {
   return (

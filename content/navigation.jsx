@@ -1,7 +1,7 @@
 // Navigation items for Pixel & Code SPA
 export const navItems = [
   { label: "Home", key: "home", href: "/" },
-  { label: "Pricing", key: "pricing", href: "/pricing" },
   { label: "Services", key: "services", href: "/services" },
+  { label: "Our Process", key: "our-process", href: "/website-process" },
   { label: "Contact", key: "contact", href: "/contact" },
 ];

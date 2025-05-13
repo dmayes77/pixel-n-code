@@ -5,31 +5,34 @@ import React from "react";
 import Script from "next/script";
 
 /**
- * Embeds a GoHighLevel inline form via iframe and external script.
+ * Embeds a responsive GoHighLevel inline form via iframe and external script.
  *
  * @param {Object} props
  * @param {string} props.formId - The GoHighLevel form ID.
- * @param {string} props.height - Height of the iframe in pixels.
+ * @param {number|string} props.height - Height of the iframe in pixels.
  * @param {string} props.title - Accessible title for the iframe.
  */
 export default function ContactUsForm({
   formId = "YPXiwDtFHI2nOvZlslHj",
-  height = "856",
+  height = 1200,
   title = "Contact Us Form",
 }) {
   const iframeId = `inline-${formId}`;
+  const heightPx = typeof height === "number" ? `${height}px` : height;
+
   return (
     <>
-      <div className="w-full" style={{ height: `${height}px` }}>
+      {/* Centered container with max width */}
+      {/* Centered container with fixed height */}
+      <div
+        className="w-full max-w-3xl mx-auto relative"
+        style={{ height: heightPx }}
+      >
         <iframe
           src={`https://link.getcodemaze.com/widget/form/${formId}`}
-          style={{
-            width: "100%",
-            height: "100%",
-            border: "none",
-            borderRadius: "3px",
-          }}
           id={iframeId}
+          title={title}
+          className="absolute inset-0 w-full h-full rounded-md border-0"
           data-layout='{"id":"INLINE"}'
           data-trigger-type="alwaysShow"
           data-trigger-value=""
@@ -38,15 +41,16 @@ export default function ContactUsForm({
           data-deactivation-type="neverDeactivate"
           data-deactivation-value=""
           data-form-name={title}
-          data-height={height}
+          data-height={heightPx}
           data-layout-iframe-id={iframeId}
           data-form-id={formId}
-          title={title}
         />
       </div>
+
+      {/* Load the embed script after the page is interactive */}
       <Script
         src="https://link.getcodemaze.com/js/form_embed.js"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
       />
     </>
   );

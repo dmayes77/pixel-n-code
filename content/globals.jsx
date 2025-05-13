@@ -10,10 +10,10 @@ export const businessInfo = {
   name: "Code Maze Web Design",
   tagline: "Vision Meets Function",
   description:
-    "Custom web design and development for businesses that want modern, responsive sites designed to convert.",
+    "Based in Chattanooga, TN, Code Maze Web Design crafts eye‑catching, user‑friendly websites that not only look great but perform beautifully. We build on a foundation of SEO best practices—ensuring your site ranks where it matters—and round out our services with print‑design and social‑media expertise to give your brand a cohesive, multi‑channel presence.",
   phone: "(423) 497-0881",
   email: "info@getcodemaze.com",
-  website: "https://getcodemaze.com",
+  website: "https://www.getcodemaze.com",
 
   address: {
     street: "123 Innovation Lane",
@@ -100,7 +100,7 @@ export const socials = businessInfo.socials;
 
 // Next.js Metadata API config
 export const metadata = {
-  title: businessInfo.name,
+  title: `TN Website Design | SEO Services in ${businessInfo.address.state} | ${businessInfo.name}`,
   description: businessInfo.description,
   openGraph: {
     title: businessInfo.name,

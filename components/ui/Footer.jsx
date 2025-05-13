@@ -127,7 +127,7 @@ export default function Footer() {
           <h4 className="mb-4 text-white text-center laptop:text-left">
             Contact
           </h4>
-          <ul className="space-y-2 text-sm text-center laptop:text-left">
+          <ul className="space-y-3 text-sm text-center laptop:text-left">
             <li className="flex items-center justify-center laptop:justify-start">
               <HiPhone className="w-5 h-5 text-primary mr-2" />
               <a
@@ -144,11 +144,9 @@ export default function Footer() {
               </a>
             </li>
             <li className="flex items-start justify-center laptop:justify-start">
-              <HiOutlineLocationMarker className="w-5 h-5 text-primary mt-1 mr-2" />
+              <HiOutlineLocationMarker className="w-5 h-5 text-primary mr-2" />
               <address className="not-italic">
-                {address.street}
-                <br />
-                {address.city}, {address.state} {address.zip}
+                {address.city}, {address.state}
               </address>
             </li>
             <li className="flex items-center justify-center laptop:justify-start">

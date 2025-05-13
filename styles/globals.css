@@ -43,7 +43,7 @@
     @apply mb-4 mobile:text-sm laptop:text-base desktop:text-lg leading-relaxed;
   }
   section {
-    @apply w-full px-4 py-12;
+    @apply w-full px-4 py-24;
   }
 }
 
@@ -203,4 +203,30 @@
 
 .rotate-y-180 {
   transform: rotateY(180deg);
+}
+
+.h1 {
+  @apply mb-4 mobile:text-4xl tablet:text-5xl laptop:text-6xl desktop:text-7xl font-extrabold leading-snug tracking-tight;
+}
+.h2 {
+  @apply mb-10 mobile:text-2xl tablet:text-3xl laptop:text-4xl desktop:text-5xl font-extrabold leading-snug tracking-tight;
+}
+.h3 {
+  @apply mb-4 mobile:text-lg tablet:text-xl laptop:text-2xl desktop:text-3xl font-bold leading-snug tracking-tight;
+}
+.h4 {
+  @apply mb-3 mobile:text-base tablet:text-lg laptop:text-xl desktop:text-2xl font-semibold leading-snug tracking-tight;
+}
+.h5 {
+  @apply mb-2 mobile:text-sm tablet:text-base laptop:text-lg desktop:text-xl font-semibold leading-snug tracking-tight;
+}
+.h6 {
+  @apply mb-1 mobile:text-xs tablet:text-sm laptop:text-base desktop:text-lg font-semibold leading-snug tracking-tight;
+}
+
+@layer components {
+  #_builder-form {
+    @apply p-0; /* zero out padding in Tailwind world */
+    padding: 0 !important; /* force it at runtime */
+  }
 }

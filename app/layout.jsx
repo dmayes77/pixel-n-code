@@ -1,8 +1,7 @@
 // app/layout.jsx
-import "@/styles/globals.css";
-import { structuredData, logo } from "@/content/globals";
 import AppLayout from "@/components/layouts/AppLayout";
-import { metadata } from "@/content/globals";
+import { businessInfo as business, logo, metadata, structuredData } from "@/content/globals";
+import "@/styles/globals.css";
 
 export { metadata };
 
@@ -28,6 +27,7 @@ export default function RootLayout({ children }) {
           sizes="16x16"
           href={logo.logoOnly.url}
         />
+        <link rel="canonical" href={business.website}></link>
         {/* JSON‑LD structured data */}
         <script
           key="ldjson"

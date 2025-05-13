@@ -18,11 +18,8 @@ export default function ContactSection({ content }) {
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="mb-4">{title}</h2>
         {subtitle && <p className=" text-gray-600 mb-8">{subtitle}</p>}
-        <div className="flex flex-col md:flex-row md:space-x-12 ">
-          {/* Contact Form */}
-          <ContactUsForm />
-        </div>
       </div>
+      <ContactUsForm />
     </section>
   );
 }
