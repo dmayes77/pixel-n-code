@@ -1,4 +1,11 @@
 const images = {
+  foto: {
+    stepDiscovery: {
+      url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1747141214/pixel-n-code/content-images/step_discovery-proposal.webp",
+      publicId: "pixel-n-code/content-images/step_discovery-proposal",
+      alt: "Step Discovery & Proposal",
+    }
+  },
   glry: {
     glryImage01: {
       src: "/images/glry-01.webp",

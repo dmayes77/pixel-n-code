@@ -3,10 +3,12 @@ import CloudImage from "@/components/ui/CloudImage";
 import { logo } from "@/content/globals";
 import * as pageContent from "@/content/pages/website-process";
 import WebProcessSection from "@/components/sections/WebProcessSection";
+import CTASection from "@/components/sections/CTASection";
 
 export const metadata = pageContent.metadata;
 
 export default function ProcessPage() {
+
   return (
     <>
       <div className="py-30 px-4 text-center  max-w-5xl mx-auto">
@@ -18,14 +20,7 @@ export default function ProcessPage() {
         </p>
       </div>
       <WebProcessSection content={pageContent.processContent} />
-      <div className="flex flex-col items-center justify-center min-h-screen">
-        <CloudImage
-          publicId={logo.main.publicId}
-          alt={logo.main.alt}
-          ratio={4 / 1} // 3:1 aspect
-          className="w-44 tablet:w-60"
-        />
-      </div>
+      <CTASection content={pageContent.ctaContent} />
     </>
   );
 }

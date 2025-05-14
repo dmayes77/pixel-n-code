@@ -33,9 +33,9 @@ export const heroContent = {
 
 
 export const contactContent = {
-  title: "Get in Touch",
+  title: "How Can We Help?",
   subtitle:
-    "Ready to start your project? Drop us a line or fill out the form below.",
+    "Ready to start your project? Simply fill out the form and we’ll be in touch shortly.",
   contactMethods: [
     { icon: FaPhone, label: "Phone", value: business.phone },
     { icon: FaEnvelope, label: "Email", value: business.email },
@@ -45,18 +45,4 @@ export const contactContent = {
       value: `${business.address.city}, ${business.address.state}`,
     },
   ],
-  formFields: [
-    { name: "name", type: "text", placeholder: "Your Name" },
-    { name: "email", type: "email", placeholder: "Your Email" },
-    { name: "project", type: "text", placeholder: "Project Type" },
-    { name: "budget", type: "text", placeholder: "Budget Range" },
-    {
-      name: "message",
-      type: "textarea",
-      placeholder: "Tell us more about your project",
-    },
-  ],
-  buttonText: "Send Message",
-  formAction: "/api/contact",
-  formMethod: "POST",
 };

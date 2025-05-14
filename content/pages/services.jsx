@@ -27,3 +27,19 @@ export const heroContent = {
     alt: "Developer hands typing code on laptop with UI mockups floating above",
   },
 };
+
+export const servicesSectionContent = {
+  title: "Our Services",
+  services: [
+    {
+      title: "Websites",
+      image: "website-design",
+    },
+
+    { title: "Logo Design", image: "logo-design" },
+    { title: "Print Material", image: "print-materials" },
+    { title: "SEO", image: "seo" },
+    { title: "Photography", image: "photography" },
+    { title: "Videography", image: "videography" },
+  ],
+};
