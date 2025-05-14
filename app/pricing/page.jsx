@@ -1,5 +1,5 @@
-import HeroSection from "@/components/sections/HeroSection";
-import TextImageSection from "@/components/sections/TextImageSection";
+import HeroSection from "@/components/sections/shared/HeroSection";
+import TextImageSection from "@/components/sections/shared/TextImageSection";
 import CloudImage from "@/components/ui/CloudImage";
 import NavLink from "@/components/ui/NavLink";
 import { logo } from "@/content/globals";

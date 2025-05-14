@@ -1,14 +1,10 @@
-import HeroSection from "@/components/sections/HeroSection";
-import CloudImage from "@/components/ui/CloudImage";
-import { logo } from "@/content/globals";
+import WebProcessSection from "@/components/sections/pages/our-process/WebProcessSection";
+import CTASection from "@/components/sections/shared/CTASection";
 import * as pageContent from "@/content/pages/website-process";
-import WebProcessSection from "@/components/sections/WebProcessSection";
-import CTASection from "@/components/sections/CTASection";
 
 export const metadata = pageContent.metadata;
 
 export default function ProcessPage() {
-
   return (
     <>
       <div className="py-30 px-4 text-center  max-w-5xl mx-auto">

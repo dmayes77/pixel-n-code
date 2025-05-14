@@ -8,7 +8,6 @@ import {
   SiShadcnui,
 } from "react-icons/si";
 
-
 export const heroContent = {
   headline: (
     <>
@@ -39,12 +38,12 @@ export const textImageSectionContent = {
   paragraphs: [
     `At ${business.name}, we specialize in crafting tailor-made websites that guide you through every phase—from brainstorming your brand’s vision to launching a polished site live on the web. Our dedicated team oversees each milestone, ensuring your small business gets a seamless, end-to-end digital solution without the headaches of juggling multiple vendors.`,
     "Did you know that over 90% of people judge a brand by its online look and feel? A cluttered or confusing website can drive potential customers away before they ever see what you offer. That’s why partnering with an experienced yet budget-friendly design studio is one of the smartest investments you can make.",
-    "We pride ourselves on delivering rich, interactive experiences that balance eye-catching design with user-focused functionality. From vibrant color palettes and intuitive navigation to responsive layouts and performance-driven features, Pixel & Code empowers small businesses worldwide to stand out, engage visitors, and turn clicks into customers—effortlessly.",
+    `We pride ourselves on delivering rich, interactive experiences that balance eye-catching design with user-focused functionality. From vibrant color palettes and intuitive navigation to responsive layouts and performance-driven features, ${business.name} empowers small businesses worldwide to stand out, engage visitors, and turn clicks into customers—effortlessly.`,
   ],
   buttonText: "Consult For A Quick Session On Web Design",
   image: {
     src: "pixel-n-code/content-images/pixel-code-workspace",
-    alt: "Overhead view of a wooden designer’s desk featuring a MacBook Pro, tablet, and smartphone—all displaying the Pixel & Code website in synchronized layouts—surrounded by a coffee mug, succulent, pen, and color swatches.",
+    alt: `Overhead view of a wooden designer’s desk featuring a MacBook Pro, tablet, and smartphone—all displaying the ${business.name} website in synchronized layouts—surrounded by a coffee mug, succulent, pen, and color swatches.`,
   },
 };
 
@@ -80,7 +79,7 @@ export const servicesOverviewContent = [
       "Once development is complete, we handle hosting setup, CI/CD pipelines, and performance monitoring—ensuring zero downtime and a rock-solid launch.",
     image: {
       publicId: "pixel-n-code/content-images/mobile-preview",
-      alt: "Hand holding a smartphone showing the Pixel & Code homepage with “Get Started” button, set against a workspace backdrop of dual monitors and a laptop displaying code and deployment metrics.",
+      alt: `Hand holding a smartphone showing the ${business.name} homepage with “Get Started” button, set against a workspace backdrop of dual monitors and a laptop displaying code and deployment metrics.`,
     },
     reverse: false, // text left, image right
   },

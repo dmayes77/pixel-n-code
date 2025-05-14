@@ -6,13 +6,7 @@ import { Button } from "@/components/ui/button"; // adjust path if needed!
 export default function ParallaxSection({ content }) {
   if (!content) return null;
 
-  const {
-    backgroundImage,
-    headline,
-    paragraph,
-    subheadline,
-    button,
-  } = content;
+  const { backgroundImage, headline, paragraph, subheadline, button } = content;
 
   return (
     <section
@@ -28,7 +22,7 @@ export default function ParallaxSection({ content }) {
 
         <Button
           asChild
-          className="text-sm font-semibold text-primary-foreground hover:text-primary !no-underline"
+          className="text-sm font-semibold text-primary-foreground hover:text-primary-foreground !no-underline"
         >
           <Link href={button.link}>
             {button.text} <span aria-hidden="true">→</span>

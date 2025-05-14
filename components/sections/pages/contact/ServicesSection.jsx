@@ -1,7 +1,7 @@
 // components/sections/ServicesSection.jsx
 import React from "react";
 import PropTypes from "prop-types";
-import CloudImage from "../ui/CloudImage";
+import CloudImage from "../../../ui/CloudImage";
 
 /**
  * A grid of service icons with captions.

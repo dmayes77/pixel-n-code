@@ -1,7 +1,7 @@
 // components/sections/ProcessSection.jsx
 
 import React from "react";
-import CloudImage from "../ui/CloudImage";
+import CloudImage from "@/components/ui/CloudImage";
 
 // Background color classes for each step
 const bgClasses = ["bg-primary", "bg-secondary", "bg-accent"];

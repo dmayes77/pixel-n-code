@@ -1,8 +1,8 @@
 // components/sections/ContactSection.jsx
 import React from "react";
 import PropTypes from "prop-types";
-import ContactUsForm from "../ui/ContactForm";
-import CloudImage from "../ui/CloudImage";
+import ContactUsForm from "../../../ui/ContactForm";
+import CloudImage from "../../../ui/CloudImage";
 import { logo } from "@/content/globals";
 import ServicesSection from "./ServicesSection";
 import { servicesSectionContent } from "@/content/pages/services";

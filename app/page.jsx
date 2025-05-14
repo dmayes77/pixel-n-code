@@ -1,11 +1,11 @@
-import CTASection from "@/components/sections/CTASection";
-import HeroSection from "@/components/sections/HeroSection";
-import ParallaxSection from "@/components/sections/ParallaxSection";
-import ProcessSection from "@/components/sections/ProcessSection";
-import ServicesOverview from "@/components/sections/ServicesOverview";
-import TechStackSection from "@/components/sections/TechStackSection";
-import TextImageSection from "@/components/sections/TextImageSection";
-import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
+import ProcessSection from "@/components/sections/pages/home/ProcessSection";
+import ServicesOverview from "@/components/sections/pages/home/ServicesOverview";
+import TechStackSection from "@/components/sections/pages/home/TechStackSection";
+import WhyChooseUsSection from "@/components/sections/pages/home/WhyChooseUsSection";
+import CTASection from "@/components/sections/shared/CTASection";
+import HeroSection from "@/components/sections/shared/HeroSection";
+import ParallaxSection from "@/components/sections/shared/ParallaxSection";
+import TextImageSection from "@/components/sections/shared/TextImageSection";
 import * as pageContent from "@/content/pages/home";
 
 export default function HomePage() {

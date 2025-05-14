@@ -2,7 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 
 /**
  * Final call-to-action banner before the footer.
@@ -49,4 +49,3 @@ CTASection.propTypes = {
 };
 
 // content/pages/home.js (add to exports)
-

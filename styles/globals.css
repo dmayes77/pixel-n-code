@@ -230,3 +230,21 @@
     padding: 0 !important; /* force it at runtime */
   }
 }
+
+.ripple-overlay {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: 50%;
+  left: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+}
+
+.group:hover .ripple-overlay {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+

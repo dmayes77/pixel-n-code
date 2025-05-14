@@ -31,6 +31,7 @@ export default function TextImageSection({ content }) {
               publicId={image.src}
               alt={image.alt}
               objectFit="cover"
+              ratio={16/9}
             />
           </div>
         </div>

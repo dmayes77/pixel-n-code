@@ -1,5 +1,5 @@
-import ContactSection from "@/components/sections/ContactSection";
-import HeroSection from "@/components/sections/HeroSection";
+import ContactSection from "@/components/sections/pages/contact/ContactSection";
+import HeroSection from "@/components/sections/shared/HeroSection";
 import * as pageContent from "../../content/pages/contact";
 
 export const metadata = pageContent.metadata;

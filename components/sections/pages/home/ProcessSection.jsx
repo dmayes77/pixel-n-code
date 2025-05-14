@@ -1,11 +1,10 @@
 "use client";
 
-import Link from "next/link";
+import CloudImage from "@/components/ui/CloudImage";
 import { motion } from "framer-motion";
-import { FaFileAlt, FaPencilRuler, FaCode, FaThumbsUp } from "react-icons/fa";
-import { Button } from "../ui/button";
-import { AspectRatio } from "../ui/aspect-ratio";
-import CloudImage from "../ui/CloudImage";
+import Link from "next/link";
+import { FaCode, FaFileAlt, FaPencilRuler, FaThumbsUp } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
 
 // ICON MAP
 const icons = {
