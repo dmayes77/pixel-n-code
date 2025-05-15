@@ -43,7 +43,7 @@
     @apply mb-4 mobile:text-sm laptop:text-base desktop:text-lg leading-relaxed;
   }
   section {
-    @apply w-full px-4 py-24;
+    @apply w-full px-4 py-12;
   }
 }
 
