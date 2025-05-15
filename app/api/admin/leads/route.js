@@ -1,27 +1,24 @@
-import { db } from "@/lib/firebase";
-import { collection, addDoc, getDocs } from "firebase/firestore";
+import { getAll, addOne } from "@/lib/firestore";
 
-export async function POST(request) {
-  const body = await request.json();
+export async function GET() {
   try {
-    const docRef = await addDoc(collection(db, "leads"), {
-      ...body,
-      createdAt: new Date(),
-    });
-    return new Response(JSON.stringify({ id: docRef.id }), { status: 201 });
+    const leads = await getAll("leads");
+    return new Response(JSON.stringify(leads), { status: 200 });
   } catch (error) {
+    console.error(error);
     return new Response(JSON.stringify({ error: error.message }), {
       status: 500,
     });
   }
 }
 
-export async function GET() {
+export async function POST(request) {
+  const data = await request.json();
   try {
-    const snapshot = await getDocs(collection(db, "leads"));
-    const leads = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-    return new Response(JSON.stringify(leads), { status: 200 });
+    const id = await addOne("leads", data);
+    return new Response(JSON.stringify({ id }), { status: 201 });
   } catch (error) {
+    console.error(error);
     return new Response(JSON.stringify({ error: error.message }), {
       status: 500,
     });

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Toast from "@/components/ui/Toast";
 
 const servicesOptions = [
   "Website Design",
@@ -38,6 +39,7 @@ export default function LeadForm({ onLeadCreated }) {
     notes: "",
   });
   const [loading, setLoading] = useState(false);
+  const [toast, setToast] = useState(null);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -55,14 +57,14 @@ export default function LeadForm({ onLeadCreated }) {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await fetch("/api/leads", {
+      const response = await fetch("/api/admin/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
 
       if (response.ok) {
-        alert("✅ Lead Created!");
+        setToast({ type: "success", message: "✅ Lead Created!" });
         setForm({
           name: "",
           email: "",
@@ -73,65 +75,65 @@ export default function LeadForm({ onLeadCreated }) {
           timeline: "",
           notes: "",
         });
-        if (onLeadCreated) onLeadCreated(); // Refresh leads table if needed
+        if (onLeadCreated) onLeadCreated();
       } else {
-        alert("❌ Failed to create lead.");
+        setToast({ type: "error", message: "❌ Failed to create lead." });
       }
     } catch (error) {
       console.error(error);
-      alert("❌ An unexpected error occurred.");
+      setToast({ type: "error", message: "❌ Unexpected error occurred." });
     }
     setLoading(false);
   };
 
   return (
-    <div className="bg-white p-6 rounded-md shadow-md mb-10">
-      <h2 className="text-2xl font-bold mb-6">Add New Lead</h2>
+    <div className="relative">
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Basic Info */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input
-            name="name"
-            placeholder="Full Name"
-            value={form.name}
-            onChange={handleChange}
-            className="p-2 border rounded"
-            required
-          />
-          <input
-            name="email"
-            placeholder="Email Address"
-            value={form.email}
-            onChange={handleChange}
-            className="p-2 border rounded"
-            required
-          />
-          <input
-            name="phone"
-            placeholder="Phone Number"
-            value={form.phone}
-            onChange={handleChange}
-            className="p-2 border rounded"
-          />
-          <input
-            name="businessName"
-            placeholder="Business Name"
-            value={form.businessName}
-            onChange={handleChange}
-            className="p-2 border rounded"
-          />
+        {/* Basic Info div */}
+        <div>
+          <h3 className="text-lg font-semibold mb-4">Basic Information</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input
+              name="name"
+              placeholder="Full Name"
+              value={form.name}
+              onChange={handleChange}
+              className="p-2 border rounded w-full"
+              required
+            />
+            <input
+              name="email"
+              placeholder="Email Address"
+              value={form.email}
+              onChange={handleChange}
+              className="p-2 border rounded w-full"
+              required
+            />
+            <input
+              name="phone"
+              placeholder="Phone Number"
+              value={form.phone}
+              onChange={handleChange}
+              className="p-2 border rounded w-full"
+            />
+            <input
+              name="businessName"
+              placeholder="Business Name"
+              value={form.businessName}
+              onChange={handleChange}
+              className="p-2 border rounded w-full"
+            />
+          </div>
         </div>
 
         {/* Services Interested */}
         <div>
-          <label className="block mb-2 font-semibold">
-            Services Interested
-          </label>
+          <h3 className="text-lg font-semibold mb-4">Services Interested</h3>
           <select
             multiple
             value={form.servicesInterested}
             onChange={handleMultiSelect}
-            className="w-full p-2 border rounded h-40"
+            className="w-full p-2 border rounded h-32"
           >
             {servicesOptions.map((service) => (
               <option key={service} value={service}>
@@ -144,69 +146,91 @@ export default function LeadForm({ onLeadCreated }) {
           </p>
         </div>
 
-        {/* Budget and Timeline */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className="block mb-2 font-semibold">Estimated Budget</label>
-            <select
-              name="estimatedBudget"
-              value={form.estimatedBudget}
-              onChange={handleChange}
-              className="w-full p-2 border rounded"
-            >
-              <option value="">Select Budget Range</option>
-              {budgetOptions.map((budget) => (
-                <option key={budget} value={budget}>
-                  {budget}
-                </option>
-              ))}
-            </select>
-          </div>
+        {/* Budget & Timeline div */}
+        <div>
+          <h3 className="text-lg font-semibold mb-4">Project Details</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block mb-2 text-sm font-medium">
+                Estimated Budget
+              </label>
+              <select
+                name="estimatedBudget"
+                value={form.estimatedBudget}
+                onChange={handleChange}
+                className="w-full p-2 border rounded"
+              >
+                <option value="">Select Budget Range</option>
+                {budgetOptions.map((budget) => (
+                  <option key={budget} value={budget}>
+                    {budget}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-          <div>
-            <label className="block mb-2 font-semibold">
-              Estimated Timeline
-            </label>
-            <select
-              name="timeline"
-              value={form.timeline}
-              onChange={handleChange}
-              className="w-full p-2 border rounded"
-            >
-              <option value="">Select Timeline</option>
-              {timelineOptions.map((timeline) => (
-                <option key={timeline} value={timeline}>
-                  {timeline}
-                </option>
-              ))}
-            </select>
+            <div>
+              <label className="block mb-2 text-sm font-medium">
+                Estimated Timeline
+              </label>
+              <select
+                name="timeline"
+                value={form.timeline}
+                onChange={handleChange}
+                className="w-full p-2 border rounded"
+              >
+                <option value="">Select Timeline</option>
+                {timelineOptions.map((timeline) => (
+                  <option key={timeline} value={timeline}>
+                    {timeline}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
 
-        {/* Notes */}
+        {/* Notes div */}
         <div>
+          <h3 className="text-lg font-semibold mb-4">Additional Notes</h3>
           <textarea
             name="notes"
             placeholder="Project Notes / Special Requests"
             value={form.notes}
             onChange={handleChange}
-            className="w-full p-2 border rounded h-32"
+            className="w-full p-2 border rounded h-24"
           />
         </div>
 
-        {/* Submit */}
-        <div className="text-center">
+        {/* Submit Button */}
+        <div className="text-center pt-4">
           <button
             type="submit"
-            className={`px-8 py-3 rounded text-white ${
+            className={`flex items-center justify-center gap-2 px-8 py-3 rounded text-white ${
               loading ? "bg-gray-400" : "bg-primary hover:bg-primary-dark"
             } transition`}
             disabled={loading}
           >
-            {loading ? "Saving Lead..." : "Save Lead"}
+            {loading ? (
+              <>
+                <span className="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full"></span>
+                Saving...
+              </>
+            ) : (
+              "Save Lead"
+            )}
           </button>
         </div>
       </form>
+
+      {/* Toast Notifications */}
+      {toast && (
+        <Toast
+          type={toast.type}
+          message={toast.message}
+          onClose={() => setToast(null)}
+        />
+      )}
     </div>
   );
 }

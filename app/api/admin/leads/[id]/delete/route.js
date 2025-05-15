@@ -1,12 +1,12 @@
-import { db } from "@/lib/firebase";
-import { doc, deleteDoc } from "firebase/firestore";
+import { deleteOne } from "@/lib/firestore";
 
 export async function DELETE(request, { params }) {
   const { id } = params;
   try {
-    await deleteDoc(doc(db, "leads", id));
+    await deleteOne("leads", id);
     return new Response(null, { status: 204 });
   } catch (error) {
+    console.error(error);
     return new Response(JSON.stringify({ error: error.message }), {
       status: 500,
     });
