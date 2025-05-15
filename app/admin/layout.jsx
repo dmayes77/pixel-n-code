@@ -1,10 +1,12 @@
-import Link from "next/link";
+import { redirect } from "next/navigation";
+import { getAuthSession } from "@/lib/auth";
 
-export default function AdminLayout({ children }) {
-  return (
-    <div className="flex min-h-screen">
-      {/* Main Content */}
-      <main className="flex-1 bg-gray-50 p-8">{children}</main>
-    </div>
-  );
+export default async function AdminLayout({ children }) {
+  const session = await getAuthSession();
+
+  if (!session || session.user.role !== "admin") {
+    redirect("/login"); // Protect /admin
+  }
+
+  return <>{children}</>; // ✅ Just render the page content normally
 }

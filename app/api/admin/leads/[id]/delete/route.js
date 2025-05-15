@@ -1,9 +1,9 @@
-import { deleteOne } from "@/lib/firestore";
+import { adminDeleteOne } from "@/lib/firestoreAdminHelpers";
 
 export async function DELETE(request, { params }) {
   const { id } = params;
   try {
-    await deleteOne("leads", id);
+    await adminDeleteOne("leads", id);
     return new Response(null, { status: 204 });
   } catch (error) {
     console.error(error);

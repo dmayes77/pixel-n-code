@@ -1,6 +1,12 @@
 // app/layout.jsx
 import AppLayout from "@/components/layouts/AppLayout";
-import { businessInfo as business, logo, metadata, structuredData } from "@/content/globals";
+import {
+  businessInfo as business,
+  logo,
+  metadata,
+  structuredData,
+} from "@/content/globals";
+import { Toaster } from "sonner";
 import "@/styles/globals.css";
 
 export { metadata };
@@ -38,8 +44,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="bg-gray-50 antialiased w-full overflow-x-hidden">
-        {/* This is a Server Component placeholder */}
-        {/* AppRouter will hydrate the client layout here */}
+        <Toaster position="top-center" richColors />
         <AppLayout>{children}</AppLayout>
       </body>
     </html>

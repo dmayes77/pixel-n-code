@@ -1,170 +1,212 @@
 "use client";
 
-import EditLeadModal from "@/components/admin/EditLeadModal";
-import PricingCalculator from "@/components/admin/PricingCalculator";
-import Toast from "@/components/ui/Toast";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useState, useMemo, useRef, useEffect } from "react";
+import { ChevronUp, ChevronDown, Trash2, GitMerge } from "lucide-react";
+import { toast } from "sonner";
 
-export default function LeadsTable({ leads = [], onLeadsUpdated }) {
-  const [loadingId, setLoadingId] = useState(null);
-  const [editingLead, setEditingLead] = useState(null);
-  const [toast, setToast] = useState(null);
-  const [pricingLead, setPricingLead] = useState(null);
+export default function LeadsTable({ leads, onLeadsUpdated }) {
+  const router = useRouter();
 
-  const deleteLead = async (id) => {
-    if (!confirm("Are you sure you want to delete this lead?")) return;
+  // UI state
+  const [search, setSearch] = useState("");
+  const [sortField, setSortField] = useState("businessName");
+  const [sortDirection, setSortDirection] = useState("asc");
+  const [selected, setSelected] = useState([]);
 
-    setLoadingId(id);
+  // 1) Filter by search
+  const filtered = useMemo(() => {
+    return (
+      leads
+        .filter((l) => {
+          const hay =
+            `${l.businessName} ${l.name} ${l.email} ${l.phone}`.toLowerCase();
+          return hay.includes(search.toLowerCase());
+        })
+        // 2) Sort by sortField & sortDirection
+        .sort((a, b) => {
+          const A = (a[sortField] || "").toLowerCase();
+          const B = (b[sortField] || "").toLowerCase();
+          if (A < B) return sortDirection === "asc" ? -1 : 1;
+          if (A > B) return sortDirection === "asc" ? 1 : -1;
+          return 0;
+        })
+    );
+  }, [leads, search, sortField, sortDirection]);
+
+  // 3) Select‑all checkbox logic
+  const allIds = filtered.map((l) => l.id);
+  const allSelected = allIds.length > 0 && selected.length === allIds.length;
+  const partiallySelected =
+    selected.length > 0 && selected.length < allIds.length;
+  const selectAllRef = useRef(null);
+  useEffect(() => {
+    if (selectAllRef.current) {
+      selectAllRef.current.indeterminate = partiallySelected;
+    }
+  }, [partiallySelected]);
+
+  const toggleAll = () =>
+    setSelected((s) =>
+      s.length === allIds.length ? [] : [...new Set([...s, ...allIds])]
+    );
+  const toggleOne = (id) =>
+    setSelected((s) =>
+      s.includes(id) ? s.filter((x) => x !== id) : [...s, id]
+    );
+
+  // 4) Toolbar actions
+  const isActive = selected.length > 0;
+
+  const handleDelete = async () => {
+    if (!isActive) return;
+    if (!confirm(`Delete ${selected.length} lead(s)?`)) return;
     try {
-      const res = await fetch(`/api/admin/leads/${id}/delete`, {
+      const res = await fetch("/api/admin/leads", {
         method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ids: selected }),
       });
       if (res.ok) {
-        setToast({ type: "success", message: "✅ Lead Deleted!" });
+        toast.success("Leads deleted!");
+        setSelected([]);
         onLeadsUpdated();
       } else {
-        setToast({ type: "error", message: "❌ Failed to delete lead." });
+        throw new Error(await res.text());
       }
-    } catch (error) {
-      console.error(error);
-      setToast({ type: "error", message: "❌ Unexpected error occurred." });
+    } catch (e) {
+      console.error(e);
+      toast.error("Failed to delete leads");
     }
-    setLoadingId(null);
+  };
+
+  const handleMerge = () => {
+    if (selected.length < 2) {
+      toast.error("Select at least two to merge");
+      return;
+    }
+    toast(`Merge not implemented yet: ${selected.join(", ")}`);
+  };
+
+  // 5) Sorting headers
+  const handleSort = (field) => {
+    if (sortField === field) {
+      setSortDirection((d) => (d === "asc" ? "desc" : "asc"));
+    } else {
+      setSortField(field);
+      setSortDirection("asc");
+    }
   };
 
   return (
-    <>
-      {/* Only render EditLeadModal if editing */}
-      {editingLead && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="relative w-full max-w-3xl">
-            <button
-              onClick={() => setEditingLead(null)}
-              className="absolute top-4 right-4 text-gray-600 hover:text-black text-2xl"
-            >
-              &times;
-            </button>
-            <EditLeadModal
-              lead={editingLead}
-              onLeadUpdated={() => {
-                setEditingLead(null);
-                onLeadsUpdated();
-              }}
-              onClose={() => setEditingLead(null)}
-            />
-          </div>
+    <div className="space-y-4">
+      {/* Action toolbar + search */}
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <button
+            onClick={handleDelete}
+            disabled={!isActive}
+            className={`flex items-center cursor-pointer gap-1 ${
+              isActive ? "text-red-600" : "text-gray-400"
+            }`}
+            title="Delete"
+          >
+            <Trash2 className="w-5 h-5" />
+          </button>
+          <button
+            onClick={handleMerge}
+            disabled={!isActive}
+            className={`flex items-center cursor-pointer gap-1 ${
+              isActive ? "text-blue-600" : "text-gray-400"
+            }`}
+            title="Merge"
+          >
+            <GitMerge className="w-5 h-5" />
+          </button>
         </div>
-      )}
 
-      {pricingLead && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="relative w-full max-w-3xl">
-            <button
-              onClick={() => setPricingLead(null)}
-              className="absolute top-4 right-4 text-gray-600 hover:text-black text-2xl"
-            >
-              &times;
-            </button>
-            <PricingCalculator
-              leadId={pricingLead.id}
-              onSaved={() => {
-                setPricingLead(null);
-                onLeadsUpdated();
-              }}
-            />
-          </div>
-        </div>
-      )}
+        <input
+          type="text"
+          placeholder="Search leads..."
+          className="border rounded px-3 py-1"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
 
-      {/* Leads Table */}
+      {/* Leads table */}
       <div className="overflow-x-auto">
-        <table className="min-w-full bg-white rounded-md shadow-md text-[0.75rem]">
-          <thead className="bg-primary text-primary-foreground">
-            <tr>
-              <th className="p-4 text-left">Name</th>
-              <th className="p-4 text-left">Email</th>
-              <th className="p-4 text-left">Phone</th>
-              <th className="p-4 text-left">Business</th>
-              <th className="p-4 text-left">Services</th>
-              <th className="p-4 text-left">Budget</th>
-              <th className="p-4 text-left">Timeline</th>
-              <th className="p-4 text-left">Created</th>
-              <th className="p-4 text-left">Actions</th>
+        <table className="w-full table-auto border-collapse">
+          <thead>
+            <tr className="bg-gray-100 text-left text-sm font-semibold">
+              <th className="p-2">
+                <input
+                  type="checkbox"
+                  ref={selectAllRef}
+                  checked={allSelected}
+                  onChange={toggleAll}
+                />
+              </th>
+              {[
+                { key: "businessName", label: "Business Name" },
+                { key: "name", label: "Contact Name" },
+                { key: "email", label: "Email" },
+                { key: "phone", label: "Phone" },
+              ].map((col) => (
+                <th
+                  key={col.key}
+                  className="p-2 cursor-pointer select-none"
+                  onClick={() => handleSort(col.key)}
+                >
+                  {col.label}{" "}
+                  {sortField === col.key &&
+                    (sortDirection === "asc" ? (
+                      <ChevronUp className="inline w-4 h-4" />
+                    ) : (
+                      <ChevronDown className="inline w-4 h-4" />
+                    ))}
+                </th>
+              ))}
+              <th className="p-2">Services</th>
             </tr>
           </thead>
-          <tbody>
-            {leads.length > 0 ? (
-              leads
-                .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-                .map((lead) => (
-                  <tr key={lead.id} className="border-t">
-                    <td className="p-4">{lead.name}</td>
-                    <td className="p-4">{lead.email}</td>
-                    <td className="p-4">{lead.phone || "-"}</td>
-                    <td className="p-4">{lead.businessName || "-"}</td>
-                    <td className="p-4">
-                      {lead.servicesInterested?.length
-                        ? lead.servicesInterested.join(", ")
-                        : "-"}
-                    </td>
-                    <td className="p-4">{lead.estimatedBudget || "-"}</td>
-                    <td className="p-4">{lead.timeline || "-"}</td>
-                    <td className="p-4 text-sm text-gray-500">
-                      {lead.createdAt
-                        ? new Date(
-                            lead.createdAt.seconds * 1000
-                          ).toLocaleDateString()
-                        : "-"}
-                    </td>
-                    <td className="p-4 flex items-center gap-2">
-                      <button
-                        onClick={() => setPricingLead(lead)}
-                        className="px-3 py-1 text-xs rounded bg-green-600 text-white hover:bg-green-700 transition"
-                      >
-                        Pricing
-                      </button>
-                      {/* Edit Button */}
-                      <button
-                        onClick={() => setEditingLead(lead)}
-                        className="px-3 py-1 text-xs rounded bg-secondary text-secondary-foreground hover:bg-secondary-dark transition"
-                      >
-                        Edit
-                      </button>
 
-                      {/* Delete Button */}
-                      <button
-                        onClick={() => deleteLead(lead.id)}
-                        className={`px-3 py-1 text-xs rounded bg-red-600 text-white hover:bg-red-700 transition ${
-                          loadingId === lead.id
-                            ? "opacity-50 pointer-events-none"
-                            : ""
-                        }`}
-                        disabled={loadingId === lead.id}
-                      >
-                        {loadingId === lead.id ? "Deleting..." : "Delete"}
-                      </button>
-                    </td>
-                  </tr>
-                ))
-            ) : (
-              <tr>
-                <td colSpan="9" className="text-center text-gray-500 p-6">
-                  No leads found.
+          <tbody>
+            {filtered.map((lead) => (
+              <tr
+                key={lead.id}
+                onClick={() => router.push(`/admin/leads/${lead.id}`)}
+                className={`
+                    cursor-pointer border-t
+                     ${
+                       selected.includes(lead.id)
+                         ? "bg-accent/10" /* selected → 10% accent bg */
+                         : "hover:bg-gray-50" /* otherwise hover state */
+                     }
+                   `}
+              >
+                <td className="p-2">
+                  <input
+                    type="checkbox"
+                    checked={selected.includes(lead.id)}
+                    onChange={() => toggleOne(lead.id)}
+                    onClick={(e) => e.stopPropagation()}
+                  />
+                </td>
+                <td className="p-2">{lead.businessName || "—"}</td>
+                <td className="p-2">{lead.name || "—"}</td>
+                <td className="p-2">{lead.email || "—"}</td>
+                <td className="p-2">{lead.phone || "—"}</td>
+                <td className="p-2">
+                  {lead.servicesInterested?.length > 0
+                    ? `${lead.servicesInterested.length} ✔`
+                    : "None"}
                 </td>
               </tr>
-            )}
+            ))}
           </tbody>
         </table>
       </div>
-
-      {/* Toast Notifications */}
-      {toast && (
-        <Toast
-          type={toast.type}
-          message={toast.message}
-          onClose={() => setToast(null)}
-        />
-      )}
-    </>
+    </div>
   );
 }

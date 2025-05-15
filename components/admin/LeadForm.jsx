@@ -22,8 +22,8 @@ const budgetOptions = [
 
 const timelineOptions = [
   "ASAP (rush project)",
-  "1–2 months",
-  "3–4 months",
+  "1-2 Weeks",
+  "1 Month",
   "Flexible",
 ];
 

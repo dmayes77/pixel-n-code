@@ -1,10 +1,13 @@
 "use client";
 
+import SessionChecker from "@/components/admin/SessionChecker";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { toast } from "sonner";
 
-export default function AdminLayout({ children }) {
+export default function AdminLayoutUI({ children }) {
   const pathname = usePathname();
+  const router = useRouter();
 
   const navItems = [
     { label: "Dashboard Home", href: "/admin" },
@@ -13,9 +16,23 @@ export default function AdminLayout({ children }) {
     { label: "Proposals", href: "/admin/proposals" },
   ];
 
+  const handleLogout = async () => {
+    try {
+      await fetch("/api/auth/logout", { method: "POST" });
+      toast.success("Logged out successfully.");
+      setTimeout(() => {
+        router.push("/login");
+      }, 500);
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to log out.");
+    }
+  };
+  
+
   return (
     <div className="flex h-screen">
-      {/* Sidebar (fixed full height, no scrolling) */}
+      {/* Sidebar */}
       <aside className="w-64 flex-shrink-0 bg-primary text-primary-foreground flex flex-col p-6">
         <div className="flex flex-col h-full">
           <div>
@@ -32,18 +49,29 @@ export default function AdminLayout({ children }) {
                   {item.label}
                 </Link>
               ))}
+
+              {/* Logout Button */}
+              <button
+                onClick={handleLogout}
+                className="mt-6 text-left hover:underline text-sm text-primary-foreground/80"
+              >
+                Logout
+              </button>
             </nav>
           </div>
 
-          {/* Footer fixed at bottom of sidebar */}
+          {/* Footer */}
           <div className="mt-auto text-xs text-primary-foreground/70">
             &copy; {new Date().getFullYear()} Code Maze
           </div>
         </div>
       </aside>
 
-      {/* Main Content (scrollable independently) */}
-      <main className="flex-1 overflow-y-auto p-10 bg-gray-50">{children}</main>
+      {/* Main Content */}
+      <main className="flex-1 overflow-y-auto p-10 bg-gray-50">
+        <SessionChecker />
+        {children}
+      </main>
     </div>
   );
 }

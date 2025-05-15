@@ -248,3 +248,14 @@
   opacity: 1;
 }
 
+
+/* Fix Sonner Toast container */
+section[aria-label="Notifications alt+T"] {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  pointer-events: none;
+}
+
