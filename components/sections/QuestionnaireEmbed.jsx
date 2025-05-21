@@ -28,14 +28,14 @@ export default function SurveyEmbed({ surveyId, title = 'Survey' }) {
     <div className="w-full overflow-hidden">
       <iframe
         ref={iframeRef}
-        src={`https://link.getcodemaze.com/widget/survey/${surveyId}`}
+        src={`https://app.getcodemaze.com/widget/survey/${surveyId}`}
         style={{ border: 'none', width: '100%' }}
         scrolling="no"
         id={surveyId}
         title={title}
       />
       {/* this script powers the embed */}
-      <Script src="https://link.getcodemaze.com/js/form_embed.js" strategy="lazyOnload" />
+      <Script src="https://app.getcodemaze.com/js/form_embed.js" strategy="lazyOnload" />
     </div>
   );
 }

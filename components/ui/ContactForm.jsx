@@ -46,11 +46,9 @@ export default function ContactUsForm({
           data-layout-iframe-id={iframeId}
           data-form-id={formId}
         ></iframe>
-
-        <script src="https://app.getcodemaze.com/js/form_embed.js"></script>
         {/* Load the embed script after the page is interactive */}
         <Script
-          src="https://link.getcodemaze.com/js/form_embed.js"
+          src="https://app.getcodemaze.com/js/form_embed.js"
           strategy="afterInteractive"
         />
       </div>
