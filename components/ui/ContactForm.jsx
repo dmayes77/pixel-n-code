@@ -30,7 +30,7 @@ export default function ContactUsForm({
         style={{ height: heightPx }}
       >
         <iframe
-          src={`https://link.getcodemaze.com/widget/form/${formId}`}
+          src={`https://app.getcodemaze.com/widget/form/${formId}`}
           id={iframeId}
           title={title}
           className="absolute inset-0 w-full h-full rounded-md border-0"
