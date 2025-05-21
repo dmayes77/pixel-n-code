@@ -18,6 +18,7 @@ export default function CloudImage({
         fill
         quality={80}
         style={{ objectFit }}
+        sizes="(max-width: 640px) 100vw, 600px"
         {...props}
       />
     </div>

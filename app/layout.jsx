@@ -15,10 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={logo.logoOnly.url} />
         <link rel="apple-touch-icon" sizes="180x180" href={logo.logoOnly.url} />
         <link
