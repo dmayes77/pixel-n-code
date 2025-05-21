@@ -15,36 +15,7 @@ export default function ContactSection({ content }) {
 
   return (
     <section className="w-full bg-secondary p-0!">
-      <div className="flex flex-col laptop:flex-row items-center justify-center gap-4 space-y-12 laptop:space-y-0">
-        {/* Column 1 */}
-        <div className="w-full p-8 laptop:pr-0 tablet:col-1.5 mx-auto">
-          <div className="w-full px-4  py-8  rounded-lg text-center bg-white">
-            <h2>{title}</h2>
-            {subtitle && <p className="text-gray-600 mb-8">{subtitle}</p>}
-
-            {/* responsive contact methods */}
-            <div
-              className="
-            flex flex-col tablet:flex-row laptop:flex-col desktop:flex-row justify-center items-center 
-            space-y-6 tablet:space-x-6 tablet:space-y-0 laptop:space-y-6 
-            laptop:space-x-0 desktop:space-y-0  desktop:space-x-12 mb-6"
-            >
-              {contactMethods.map(({ icon: Icon, label, value }) => (
-                <div
-                  key={label}
-                  className="flex flex-col items-center justify-center space-y-2 border p-4 rounded-lg shadow-md bg-gray-50 hover:bg-gray-100 transition duration-300 w-45"
-                >
-                  <Icon className="w-8 h-8 text-primary" />
-                  <p className="text-sm font-semibold text-nowrap">{label}</p>
-                  <p className="text-sm text-gray-700 text-nowrap">{value}</p>
-                </div>
-              ))}
-            </div>
-            <div className="max-w-4xl mx-auto px-4">
-              <ContactUsForm />
-            </div>
-          </div>
-        </div>
+      <div className="flex flex-col laptop:flex-row-reverse items-center justify-center gap-4 space-y-12 laptop:space-y-0 ">
         {/* Column 2 */}
         <div className="w-full h-full laptop:w-1/2 mx-auto text-center self-stretch">
           <div className="w-full h-full laptop:max-w-xs mx-auto py-16 bg-white space-y-8">
@@ -78,6 +49,35 @@ export default function ContactSection({ content }) {
                 presence, we’re committed to fueling your growth every step of
                 the way.
               </p>
+            </div>
+          </div>
+        </div>
+        {/* Column 1 */}
+        <div className="w-full p-8 laptop:pr-0 tablet:col-1.5 mx-auto">
+          <div className="w-full px-4  py-8  rounded-lg text-center bg-white">
+            <h2>{title}</h2>
+            {subtitle && <p className="text-gray-600 mb-8">{subtitle}</p>}
+
+            {/* responsive contact methods */}
+            <div
+              className="
+            flex flex-col tablet:flex-row laptop:flex-col desktop:flex-row justify-center items-center 
+            space-y-6 tablet:space-x-6 tablet:space-y-0 laptop:space-y-6 
+            laptop:space-x-0 desktop:space-y-0  desktop:space-x-12 mb-6"
+            >
+              {contactMethods.map(({ icon: Icon, label, value }) => (
+                <div
+                  key={label}
+                  className="flex flex-col items-center justify-center space-y-2 border p-4 rounded-lg shadow-md bg-gray-50 hover:bg-gray-100 transition duration-300 w-45"
+                >
+                  <Icon className="w-8 h-8 text-primary" />
+                  <p className="text-sm font-semibold text-nowrap">{label}</p>
+                  <p className="text-sm text-gray-700 text-nowrap">{value}</p>
+                </div>
+              ))}
+            </div>
+            <div className="max-w-4xl mx-auto px-4">
+              <ContactUsForm />
             </div>
           </div>
         </div>
