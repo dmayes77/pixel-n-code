@@ -17,6 +17,7 @@ export default function ContactUsForm({
   height = 1200,
   title = "Contact Us Form",
 }) {
+  <script src="https://app.getcodemaze.com/js/form_embed.js"></script>;
   const iframeId = `inline-${formId}`;
   const heightPx = typeof height === "number" ? `${height}px` : height;
 
@@ -44,14 +45,15 @@ export default function ContactUsForm({
           data-height={heightPx}
           data-layout-iframe-id={iframeId}
           data-form-id={formId}
+        ></iframe>
+
+        <script src="https://app.getcodemaze.com/js/form_embed.js"></script>
+        {/* Load the embed script after the page is interactive */}
+        <Script
+          src="https://link.getcodemaze.com/js/form_embed.js"
+          strategy="afterInteractive"
         />
       </div>
-
-      {/* Load the embed script after the page is interactive */}
-      <Script
-        src="https://link.getcodemaze.com/js/form_embed.js"
-        strategy="afterInteractive"
-      />
     </>
   );
 }
