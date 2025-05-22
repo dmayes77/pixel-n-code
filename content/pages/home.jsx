@@ -3,7 +3,7 @@ import {
   SiNextdotjs,
   SiTailwindcss,
   SiCloudinary,
-  SiStrapi,
+  SiFirebase,
   SiVercel,
   SiShadcnui,
 } from "react-icons/si";
@@ -218,10 +218,10 @@ export const techStackContent = {
         "Cloudinary handles optimized image delivery and transformation at scale.",
     },
     {
-      name: "Strapi",
-      Icon: SiStrapi,
+      name: "Firebase",
+      Icon: SiFirebase,
       description:
-        "Strapi gives us a headless CMS that’s easy to customize and secure.",
+        "Firebase provides a scalable backend with real-time database, authentication, and cloud functions — ideal for modern web apps.",
     },
     {
       name: "Vercel",
