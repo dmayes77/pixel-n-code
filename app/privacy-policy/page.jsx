@@ -73,10 +73,33 @@ export default function PrivacyPolicyPage() {
         .
       </p>
 
+      <h2 className="text-xl font-semibold mt-8 mb-2">Cookie Policy</h2>
+      <p className="mb-4">
+        We use cookies and similar technologies to improve your browsing
+        experience, analyze website traffic, and deliver personalized content.
+        By using our website, you consent to our use of cookies.
+      </p>
+      <p className="mb-4">
+        You can choose to disable cookies through your browser settings.
+        However, doing so may limit your experience and access to certain
+        features on our site.
+      </p>
+      <p className="mb-4">Cookies may be used for:</p>
+      <ul className="list-disc list-inside mb-4">
+        <li>Site performance and functionality</li>
+        <li>Visitor analytics (e.g., Google Analytics)</li>
+        <li>Marketing and remarketing campaigns</li>
+        <li>Session management and login functionality (if applicable)</li>
+      </ul>
+      <p className="mb-4">
+        Third-party services like analytics tools may also set their own cookies
+        in accordance with their privacy policies.
+      </p>
+
       <h2 className="text-xl font-semibold mt-8 mb-2">Policy Updates</h2>
       <p className="mb-4">
         This Privacy Policy may be updated occasionally. The latest version will
-        always be available at this page.
+        always be available on this page.
       </p>
 
       <p className="mt-8 text-sm text-gray-500">Last updated: May 2025</p>
