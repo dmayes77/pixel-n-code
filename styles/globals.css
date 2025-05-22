@@ -16,10 +16,10 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 scroll-smooth;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground ;
   }
   h1 {
     @apply mb-4 mobile:text-4xl tablet:text-5xl laptop:text-6xl desktop:text-7xl font-extrabold leading-snug tracking-tight;

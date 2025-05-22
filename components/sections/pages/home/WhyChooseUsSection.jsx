@@ -27,7 +27,7 @@ export default function WhyChooseUsSection({ content }) {
   const { heading, paragraph, features } = content;
 
   return (
-    <section>
+    <section id="about" className="scroll-mt-16">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 space-y-4">
           <h2 className="text-primary">{heading}</h2>

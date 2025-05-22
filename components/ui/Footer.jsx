@@ -35,8 +35,8 @@ export default function Footer() {
   } = business;
 
   return (
-    <footer className="bg-secondary text-secondary-foreground py-12 w-full">
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-4 gap-x-8 gap-y-12">
+    <footer className="bg-secondary text-secondary-foreground  py-16 w-full">
+      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 fold:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-4 gap-x-8 gap-y-12">
         {/* 1) Logo / Tagline / Socials */}
         <div>
           <div className="flex flex-col items-center laptop:items-start text-center laptop:text-left space-y-4">
@@ -44,7 +44,7 @@ export default function Footer() {
               publicId={logo.mainWhite.publicId}
               alt={logo.main.alt}
               ratio={4 / 1} // 3:1 aspect
-              className="w-60"
+              className="w-48 tablet:w-60"
             />
             <p className="text-sm text-primary-foreground">{tagline}</p>
             <div className="flex space-x-4">
@@ -173,8 +173,10 @@ export default function Footer() {
 
         {/* 4) Hours of Operation */}
         <div>
-          <h4 className="mb-4 text-white text-center fold:text-left">Hours</h4>
-          <ul className="space-y-1 text-sm text-center fold:text-left">
+          <h4 className="mb-4 text-white text-center laptop:text-left">
+            Hours
+          </h4>
+          <ul className="space-y-1 text-sm text-center fold:text-left max-w-[200px] mx-auto laptop:mx-0">
             {Object.entries(hoursOfOperation).map(([day, hrs]) => (
               <li key={day} className="flex justify-between">
                 <span className="capitalize">{day}</span>

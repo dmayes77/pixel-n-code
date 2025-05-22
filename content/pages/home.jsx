@@ -21,7 +21,7 @@ export const heroContent = {
   subheadline:
     "We build scalable, high-performance web applications that bring your brand vision to life—fast, secure, and mobile-first.",
   cta: { label: "Get Started", href: "/contact" },
-  secondaryCta: { label: "About Us", href: "/about" },
+  secondaryCta: { label: "About Us", href: "/#about" },
   announcement: {
     text: "Website packages starting at $497!",
     link: { label: "Learn More", href: "/services" },
@@ -206,7 +206,7 @@ export const techStackContent = {
         "Tailwind lets us rapidly build custom UIs without leaving your HTML.",
     },
     {
-      name: "shadcn/ui",
+      name: "Shadcn/ui",
       Icon: SiShadcnui,
       description:
         "shadcn/ui provides ready‑made React components styled with Tailwind.",

@@ -86,10 +86,11 @@ export default function NavBar() {
               <div className="w-full bg-white shadow-lg pointer-events-auto">
                 <div className="p-6">
                   <div className="flex justify-between items-center mb-4">
-                    <BrandLogo
-                      image={logo.main.publicId}
+                    <CloudImage
+                      publicId={logo.main.publicId}
                       alt={logo.main.alt}
-                      size={50}
+                      ratio={4 / 1}
+                      className="w-44 tablet:w-60"
                     />
                     <button
                       onClick={closeMenu}
