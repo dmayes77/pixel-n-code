@@ -119,6 +119,14 @@ export default function Footer() {
                 </NavLink>
               </li>
             ))}
+            <li>
+              <NavLink
+                href="/privacy-policy"
+                className="text-white hover:text-primary"
+              >
+                Privacy Policy
+              </NavLink>
+            </li>
           </ul>
         </div>
 
