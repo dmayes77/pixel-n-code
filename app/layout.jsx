@@ -8,6 +8,7 @@ import {
 } from "@/content/globals";
 import { Toaster } from "sonner";
 import "@/styles/globals.css";
+import CookieConsentBanner from "@/components/ui/CookieConsentBanner";
 
 export { metadata };
 
@@ -43,6 +44,7 @@ export default function RootLayout({ children }) {
       <body className="bg-gray-50 antialiased w-full overflow-x-hidden">
         <Toaster position="top-center" richColors />
         <AppLayout>{children}</AppLayout>
+        <CookieConsentBanner />
       </body>
     </html>
   );
