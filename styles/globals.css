@@ -19,7 +19,7 @@
     @apply border-border outline-ring/50 scroll-smooth;
   }
   body {
-    @apply bg-background text-foreground ;
+    @apply bg-background text-foreground;
   }
   h1 {
     @apply mb-4 mobile:text-4xl tablet:text-5xl laptop:text-6xl desktop:text-7xl font-extrabold leading-snug tracking-tight;
@@ -237,7 +237,7 @@
   height: 200%;
   top: 50%;
   left: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
   transform: translate(-50%, -50%) scale(0);
   opacity: 0;
   transition: transform 0.7s ease-out, opacity 0.7s ease-out;
@@ -248,7 +248,6 @@
   opacity: 1;
 }
 
-
 /* Fix Sonner Toast container */
 section[aria-label="Notifications alt+T"] {
   position: fixed;
@@ -258,4 +257,3 @@ section[aria-label="Notifications alt+T"] {
   z-index: 9999;
   pointer-events: none;
 }
-

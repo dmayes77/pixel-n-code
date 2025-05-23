@@ -12,6 +12,14 @@ export default function LeadDetails({ lead }) {
   const [leadData, setLeadData] = useState(lead);
   const [saving, setSaving] = useState(false);
   const [deleting, setDeleting] = useState(false);
+  const [formattedDate, setFormattedDate] = useState("");
+
+useEffect(() => {
+  if (leadData.updatedAt) {
+    const date = new Date(leadData.updatedAt);
+    setFormattedDate(date.toLocaleString());
+  }
+}, [leadData.updatedAt]);
 
   const updateField = async (field, value) => {
     setSaving(true);
@@ -81,10 +89,7 @@ export default function LeadDetails({ lead }) {
           {leadData.name || "No Contact Name"}
         </p>
         <p className="text-sm text-gray-400">
-          Last Updated:{" "}
-          {leadData.updatedAt
-            ? new Date(leadData.updatedAt).toLocaleString()
-            : "Unknown"}
+        Last Updated: {formattedDate || "Unknown"}
         </p>
       </div>
 
