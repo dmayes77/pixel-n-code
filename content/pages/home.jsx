@@ -1,29 +1,17 @@
 import { businessInfo as business } from "@/content/globals";
-import {
-  SiNextdotjs,
-  SiTailwindcss,
-  SiCloudinary,
-  SiFirebase,
-  SiVercel,
-  SiShadcnui,
-} from "react-icons/si";
+import { SiNextdotjs, SiTailwindcss, SiCloudinary, SiFirebase, SiVercel, SiShadcnui } from "react-icons/si";
 
 export const heroContent = {
   headline: (
     <>
-      Empowering{" "}
-      <mark className="px-3 py-1 text-white bg-accent/75 rounded-sm">
-        Digital
-      </mark>{" "}
-      Experiences
+      Empowering <mark className="px-3 py-1 text-white bg-accent/75 rounded-sm">Digital</mark> Experiences
     </>
   ),
-  subheadline:
-    "We build scalable, high-performance web applications that bring your brand vision to life—fast, secure, and mobile-first.",
-  cta: { label: "Get Started", href: "/contact" },
+  subheadline: "We build scalable, high-performance web applications that bring your brand vision to life—fast, secure, and mobile-first.",
+  cta: { label: "View Website Pricing", href: "/services/website-development" },
   secondaryCta: { label: "About Us", href: "/#about" },
   announcement: {
-    text: "Website packages starting at $497!",
+    text: "Website packages starting at $239/mo",
     link: { label: "Learn More", href: "/services" },
   },
   image: {
@@ -61,8 +49,7 @@ export const servicesOverviewContent = [
   {
     heading: (
       <>
-        <mark className="bg-primary/75 text-white px-1 rounded">React</mark>{" "}
-        Website Development
+        <mark className="bg-primary/75 text-white px-1 rounded">React</mark> Website Development
       </>
     ),
     description:
@@ -85,8 +72,7 @@ export const servicesOverviewContent = [
   },
   {
     heading: "Website Maintenance",
-    description:
-      "Keep your site running smoothly with ongoing maintenance, security patches, performance tweaks, and backups—so you never miss a beat.",
+    description: "Keep your site running smoothly with ongoing maintenance, security patches, performance tweaks, and backups—so you never miss a beat.",
     image: {
       publicId: "pixel-n-code/content-images/keyboard-closeup",
       alt: "Low-angle close-up of a laptop’s chiclet-style keyboard with a blurred website maintenance dashboard on the screen in the background.",
@@ -96,8 +82,7 @@ export const servicesOverviewContent = [
 ];
 
 export const parallaxSectionContent = {
-  backgroundImage:
-    "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1745261356/pixel-n-code/about-images/team-collab.png", // Update with your actual image
+  backgroundImage: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1745261356/pixel-n-code/about-images/team-collab.png", // Update with your actual image
   headline: "Build A Website That Grows With Your Business",
   paragraph: `At ${business.name}, we design digital experiences that scale with your goals. Our websites are crafted to be fast, intuitive, and ready to impress—from launch day to your next big milestone.`,
   subheadline: "Ready To Launch A Website That Works As Hard As You Do?",
@@ -116,8 +101,7 @@ export const whyChooseUsContent = {
     {
       icon: "FaRegComments",
       title: "Personalized Consultations",
-      description:
-        "Our team is ready whenever you need us — offering expert advice, project updates, and support to keep your website running smoothly.",
+      description: "Our team is ready whenever you need us — offering expert advice, project updates, and support to keep your website running smoothly.",
     },
     {
       icon: "FaUserTie",
@@ -127,33 +111,28 @@ export const whyChooseUsContent = {
     {
       icon: "FaClock",
       title: "Reliable Project Timelines",
-      description:
-        "We respect your schedule. With consistent updates and on-time delivery, you’ll always know where your project stands.",
+      description: "We respect your schedule. With consistent updates and on-time delivery, you’ll always know where your project stands.",
     },
     {
       icon: "FaMobileAlt",
       title: "Built for Ease of Use",
-      description:
-        "We create websites that are intuitive, mobile-friendly, and easy for your customers to navigate — boosting engagement from the start.",
+      description: "We create websites that are intuitive, mobile-friendly, and easy for your customers to navigate — boosting engagement from the start.",
     },
     {
       icon: "FaShieldAlt",
       title: "Strong Website Security",
-      description:
-        "Protecting your business and customer information is a top priority. We implement trusted security measures from day one.",
+      description: "Protecting your business and customer information is a top priority. We implement trusted security measures from day one.",
     },
     {
       icon: "FaChartLine",
       title: "Ongoing Performance Checks",
-      description:
-        "Our job doesn't end at launch — we monitor your site’s performance and recommend improvements to keep you ahead online.",
+      description: "Our job doesn't end at launch — we monitor your site’s performance and recommend improvements to keep you ahead online.",
     },
   ],
 };
 
 export const processContent = {
-  heading:
-    "Turning Your Vision Into Reality with a Proven Web Development Process",
+  heading: "Turning Your Vision Into Reality with a Proven Web Development Process",
   paragraph: `At ${business.name}, we follow a proven, streamlined approach to website design and development. Every step is carefully crafted to ensure timely delivery, flawless execution, and outstanding results for your business.`,
   image: {
     publicId: "pixel-n-code/content-images/creative-workspace-stages",
@@ -163,26 +142,22 @@ export const processContent = {
     {
       icon: "FaFileAlt",
       title: "Requirements Gathering",
-      description:
-        "We begin by understanding your goals, requirements, and target audience—setting the foundation for a successful website build.",
+      description: "We begin by understanding your goals, requirements, and target audience—setting the foundation for a successful website build.",
     },
     {
       icon: "FaPencilRuler",
       title: "Website Design",
-      description:
-        "Our designers craft wireframes and layouts focused on user experience and branding, ensuring your vision comes to life visually.",
+      description: "Our designers craft wireframes and layouts focused on user experience and branding, ensuring your vision comes to life visually.",
     },
     {
       icon: "FaCode",
       title: "Website Development",
-      description:
-        "Our developers turn designs into responsive, high-performance websites built on modern, scalable frameworks.",
+      description: "Our developers turn designs into responsive, high-performance websites built on modern, scalable frameworks.",
     },
     {
       icon: "FaThumbsUp",
       title: "Quality Assurance",
-      description:
-        "Before launch, we rigorously test your site across devices and browsers to guarantee flawless functionality and reliability.",
+      description: "Before launch, we rigorously test your site across devices and browsers to guarantee flawless functionality and reliability.",
     },
   ],
   buttonText: "Hire Our Team Of Web Experts!",
@@ -196,38 +171,32 @@ export const techStackContent = {
     {
       name: "Next.js",
       Icon: SiNextdotjs,
-      description:
-        "Next.js gives us server‑side rendering and static exports for blazing FAST sites.",
+      description: "Next.js gives us server‑side rendering and static exports for blazing FAST sites.",
     },
     {
       name: "Tailwind CSS",
       Icon: SiTailwindcss,
-      description:
-        "Tailwind lets us rapidly build custom UIs without leaving your HTML.",
+      description: "Tailwind lets us rapidly build custom UIs without leaving your HTML.",
     },
     {
       name: "Shadcn/ui",
       Icon: SiShadcnui,
-      description:
-        "shadcn/ui provides ready‑made React components styled with Tailwind.",
+      description: "shadcn/ui provides ready‑made React components styled with Tailwind.",
     },
     {
       name: "Cloudinary",
       Icon: SiCloudinary,
-      description:
-        "Cloudinary handles optimized image delivery and transformation at scale.",
+      description: "Cloudinary handles optimized image delivery and transformation at scale.",
     },
     {
       name: "Firebase",
       Icon: SiFirebase,
-      description:
-        "Firebase provides a scalable backend with real-time database, authentication, and cloud functions — ideal for modern web apps.",
+      description: "Firebase provides a scalable backend with real-time database, authentication, and cloud functions — ideal for modern web apps.",
     },
     {
       name: "Vercel",
       Icon: SiVercel,
-      description:
-        "Vercel deploys our sites globally with zero‑config previews.",
+      description: "Vercel deploys our sites globally with zero‑config previews.",
     },
   ],
 };
