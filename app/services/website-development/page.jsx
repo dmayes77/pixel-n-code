@@ -1,6 +1,7 @@
 import WebProcessSection from "@/components/sections/pages/our-process/WebProcessSection";
 import CTASection from "@/components/sections/shared/CTASection";
 import * as pageContent from "@/content/pages/website-process";
+import PricingSection from "./PricingSection";
 
 export const metadata = pageContent.metadata;
 
@@ -16,6 +17,7 @@ export default function ProcessPage() {
         </p>
       </div>
       <WebProcessSection content={pageContent.processContent} />
+      <PricingSection />
       <CTASection content={pageContent.ctaContent} />
     </>
   );

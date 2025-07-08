@@ -9,17 +9,12 @@ export const metadata = {
 export const heroContent = {
   headline: (
     <>
-      Ready to{" "}
-      <mark className="px-3 py-1 text-white bg-primary/75 rounded-sm">
-        Elevate
-      </mark>{" "}
-      Your Web Presence?
+      Ready to <mark className="px-3 py-1 text-white bg-primary/75 rounded-sm">Elevate</mark> Your Web Presence?
     </>
   ),
-  subheadline:
-    "Let’s discuss your project goals and craft a custom solution that scales with your business.",
+  subheadline: "Let’s discuss your project goals and craft a custom solution that scales with your business.",
   cta: { label: "Get in Touch", href: "/#contact" },
-  secondaryCta: { label: "Request a Call", href: "/#contact" },
+  secondaryCta: { label: "Request a Call", href: "https://calendly.com/getcodemaze/60min" },
   announcement: {
     text: "Open Mon–Sat • 9 AM–6 PM EST",
     link: { label: "Book a Call", href: "/#contact" },
@@ -31,11 +26,9 @@ export const heroContent = {
   },
 };
 
-
 export const contactContent = {
   title: "How Can We Help?",
-  subtitle:
-    "Ready to start your project? Simply fill out the form and we’ll be in touch shortly.",
+  subtitle: "Ready to start your project? Simply fill out the form and we’ll be in touch shortly.",
   contactMethods: [
     { icon: FaPhone, label: "Phone", value: business.phone },
     { icon: FaEnvelope, label: "Email", value: business.email },
