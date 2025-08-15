@@ -1,5 +1,6 @@
 // app/(site)/layout.jsx
 import MainLayout from "@/components/layout/MainLayout";
+import ServiceWorkerRegister from "@/components/pwa/ServiceWorkerRegister.client";
 
 export const metadata = {
   title: "Site",
@@ -7,5 +8,10 @@ export const metadata = {
 };
 
 export default function SiteLayout({ children }) {
-  return <MainLayout>{children}</MainLayout>;
+  return (
+    <MainLayout>
+      <ServiceWorkerRegister />
+      {children}
+    </MainLayout>
+  );
 }

@@ -1,36 +1,51 @@
 // app/layout.jsx
+import "@/styles/globals.css";
+
+// NOTE: don't import `metadata` here to avoid a name clash
 import {
   businessInfo as business,
   logo,
-  metadata,
   structuredData,
 } from "@/content/globals";
 
-import "@/styles/globals.css";
-
-export { metadata };
+export const metadata = {
+  title: { default: "Your Brand", template: "%s | Your Brand" },
+  description: "Public website.",
+  manifest: "/manifest.webmanifest",
+  themeColor: "#0f172a",
+  alternates: { canonical: business.website }, // canonical via metadata
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* Favicon / icons from your content config */}
-        <link rel="icon" href={logo.logoOnly.url} />
-        <link rel="apple-touch-icon" sizes="180x180" href={logo.logoOnly.url} />
+        {/* iOS PWA friendliness */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+        {/* Use your generated PWA icon if you created it; fallback to logo URL is fine */}
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/icons/apple-touch-icon.png"
+        />
+      
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href={logo.logoOnly.url}
+          href="/icons/favicon-32.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href={logo.logoOnly.url}
+          href="/icons/favicon-16.png"
         />
-        <link rel="canonical" href={business.website} />
+
         {/* JSON-LD structured data */}
         <script
           key="ldjson"
@@ -39,7 +54,6 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="bg-gray-50 antialiased w-full overflow-x-hidden">
-        {/* (site) layout will wrap actual pages; Root keeps global providers */}
         {children}
       </body>
     </html>
