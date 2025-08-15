@@ -1,5 +1,5 @@
 // app/(site)/layout.jsx
-import MainLayout from "@/components/layouts/MainLayout";
+import MainLayout from "@/components/layout/MainLayout";
 
 export const metadata = {
   title: "Site",

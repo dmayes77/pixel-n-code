@@ -7,6 +7,8 @@ import { businessInfo as business } from "@/content/globals";
 import { navItems } from "@/content/navigation";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import { Toaster } from "sonner";
+import CookieConsentBanner from "@/components/ui/CookieConsentBanner";
 
 export default function MainLayout({ children }) {
   const pathname = usePathname();
@@ -17,10 +19,12 @@ export default function MainLayout({ children }) {
 
   return (
     <>
+      <Toaster position="top-center" richColors />
       <TopBar />
       <Navbar />
       <main>{children}</main>
       <Footer content={{ navItems, business }} />
+      <CookieConsentBanner />
     </>
   );
 }

@@ -5,9 +5,8 @@ import {
   metadata,
   structuredData,
 } from "@/content/globals";
-import { Toaster } from "sonner";
+
 import "@/styles/globals.css";
-import CookieConsentBanner from "@/components/ui/CookieConsentBanner";
 
 export { metadata };
 
@@ -41,9 +40,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="bg-gray-50 antialiased w-full overflow-x-hidden">
         {/* (site) layout will wrap actual pages; Root keeps global providers */}
-        <Toaster position="top-center" richColors />
         {children}
-        <CookieConsentBanner />
       </body>
     </html>
   );
