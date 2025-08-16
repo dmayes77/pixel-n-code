@@ -1,16 +1,24 @@
 // app/(site)/layout.jsx
 import MainLayout from "@/components/layout/MainLayout";
-import ServiceWorkerRegister from "@/components/pwa/ServiceWorkerRegister.client";
+import InstallButton from "@/components/pwa/InstallButton.client";
+import EnablePushButton from "@/components/push/EnablePushButton.client";
+import ForegroundMessages from "@/components/push/ForegroundMessages.client";
 
 export const metadata = {
-  title: "Site",
-  description: "Public website pages",
+  title: "TN Website Design",
 };
 
 export default function SiteLayout({ children }) {
   return (
-    <MainLayout>
-      <ServiceWorkerRegister />
+    <MainLayout
+      rightSlot={
+        <div className="flex items-center gap-2">
+          <InstallButton label="Install Our App" />
+          <EnablePushButton label="Enable Notifications" />
+        </div>
+      }
+    >
+      <ForegroundMessages />
       {children}
     </MainLayout>
   );

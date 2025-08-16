@@ -10,7 +10,7 @@ import { useEffect } from "react";
 import { Toaster } from "sonner";
 import CookieConsentBanner from "@/components/ui/CookieConsentBanner";
 
-export default function MainLayout({ children }) {
+export default function MainLayout({ children, rightSlot = null }) {
   const pathname = usePathname();
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function MainLayout({ children }) {
     <>
       <Toaster position="top-center" richColors />
       <TopBar />
-      <Navbar />
+      <Navbar rightSlot={rightSlot} />
       <main>{children}</main>
       <Footer content={{ navItems, business }} />
       <CookieConsentBanner />

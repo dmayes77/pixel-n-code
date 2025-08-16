@@ -12,7 +12,7 @@ export const businessInfo = {
   description:
     "Based in Chattanooga, TN, Code Maze Web Design crafts eye‑catching, user‑friendly websites that not only look great but perform beautifully. We build on a foundation of SEO best practices—ensuring your site ranks where it matters—and round out our services with print‑design and social‑media expertise to give your brand a cohesive, multi‑channel presence.",
   phone: "(423) 381-8264",
-  email: "info@getcodemaze.com",
+  email: "hello@getcodemaze.com",
   website: "https://www.getcodemaze.com",
 
   address: {

@@ -1,19 +1,26 @@
 // app/layout.jsx
 import "@/styles/globals.css";
-
-// NOTE: don't import `metadata` here to avoid a name clash
-import {
-  businessInfo as business,
-  logo,
-  structuredData,
-} from "@/content/globals";
+import { businessInfo as business, structuredData } from "@/content/globals";
+import PWAUpdate from "@/components/pwa/PWAUpdate.client";
+import PWADiagnostics from "@/components/pwa/PWADiagnostics.client";
+import { PawPrint } from "lucide-react";
 
 export const metadata = {
-  title: { default: "Your Brand", template: "%s | Your Brand" },
-  description: "Public website.",
+  title: {
+    default: business.name, // ✅ no extra braces
+    template: `%s | ${business.name || "Code Maze"}`, // optional: derives from business
+  },
+  description: business.description,
   manifest: "/manifest.webmanifest",
+  alternates: { canonical: business.website },
+};
+
+export const viewport = {
   themeColor: "#0f172a",
-  alternates: { canonical: business.website }, // canonical via metadata
+  // optional: match user theme+  // themeColor: [
+  //   { media: "(prefers-color-scheme: light)", color: "#0f172a" },
+  //   { media: "(prefers-color-scheme: dark)",  color: "#0f172a" }
+  // ],
 };
 
 export default function RootLayout({ children }) {
@@ -26,13 +33,13 @@ export default function RootLayout({ children }) {
           name="apple-mobile-web-app-status-bar-style"
           content="black-translucent"
         />
-        {/* Use your generated PWA icon if you created it; fallback to logo URL is fine */}
+
+        {/* Local icons */}
         <link
           rel="apple-touch-icon"
           sizes="180x180"
           href="/icons/apple-touch-icon.png"
         />
-      
         <link
           rel="icon"
           type="image/png"
@@ -54,6 +61,8 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="bg-gray-50 antialiased w-full overflow-x-hidden">
+        <PWAUpdate />
+        <PWADiagnostics />
         {children}
       </body>
     </html>
