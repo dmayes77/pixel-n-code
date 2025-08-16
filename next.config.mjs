@@ -5,12 +5,6 @@ const isDev = process.env.NODE_ENV !== "production";
 
 /**
  * Workbox runtime caching used by next-pwa
- * - Navigations (HTML): NetworkFirst -> fresh when online, works offline
- * - Next static: CacheFirst
- * - Images (incl. Cloudinary + your /images rewrite): StaleWhileRevalidate
- * - Videos (your /videos rewrite): StaleWhileRevalidate
- * - Fonts (Google): CacheFirst
- * - Same-origin GET /api/* (future-proof): StaleWhileRevalidate
  */
 const runtimeCaching = [
   // Page navigations / HTML
@@ -68,7 +62,7 @@ const runtimeCaching = [
       expiration: { maxEntries: 50, maxAgeSeconds: 365 * 24 * 60 * 60 },
     },
   },
-  // Same-origin GET /api/* (if you add any later)
+  // Same-origin GET /api/*
   {
     urlPattern: /\/api\/.*/i,
     handler: "StaleWhileRevalidate",
@@ -78,6 +72,7 @@ const runtimeCaching = [
       expiration: { maxEntries: 50, maxAgeSeconds: 24 * 60 * 60 },
     },
   },
+  // Background Sync for contact form POST
   {
     urlPattern: ({ url, request }) =>
       url.origin === self.location.origin &&
@@ -95,12 +90,13 @@ const runtimeCaching = [
 
 const withPWACfg = withPWA({
   dest: "public",
-  disable: isDev, // enable PWA only in production by default
-  register: true, // auto-inject SW registration
-  skipWaiting: true, // take over as soon as a new SW is available
+  disable: isDev, // enable PWA only in production
+  register: true,
+  skipWaiting: true,
+  clientsClaim: true,
   runtimeCaching,
   fallbacks: {
-    document: "/offline", // make sure app/offline/page.jsx exists
+    document: "/offline", // ensure app/offline/page.jsx exists
     image: "/icons/icon-192.png",
   },
   buildExcludes: [/middleware-manifest\.json$/],
@@ -113,7 +109,6 @@ const nextConfig = withPWACfg({
 
   images: {
     remotePatterns: [
-      // tightened patterns (still cover your current usage)
       { protocol: "https", hostname: "res.cloudinary.com" },
       { protocol: "https", hostname: "lh3.googleusercontent.com" },
     ],
