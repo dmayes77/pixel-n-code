@@ -1,29 +1,34 @@
+// components/ui/MediaContainer.jsx
 "use client";
+
+function normalizeAspect(aspectRatio) {
+  if (!aspectRatio || typeof aspectRatio !== "string") return aspectRatio;
+  // If it's already a Tailwind utility, pass it through
+  if (aspectRatio.startsWith("aspect-")) return aspectRatio;
+  // Normalize "16/9" -> "16 / 9" for CSS
+  return aspectRatio.replace("/", " / ");
+}
 
 export default function MediaContainer({
   children,
   className = "",
   style = {},
-  aspectRatio, // Can be a numeric/string value (e.g. "16/9") or a Tailwind utility (e.g. "aspect-square")
+  aspectRatio, // "16/9" | "1/1" | "21/9" | "aspect-video" | etc.
   ...props
 }) {
-  // If aspectRatio starts with 'aspect-', assume it's a Tailwind class.
-  const tailwindAspect =
-    aspectRatio &&
-    typeof aspectRatio === "string" &&
-    aspectRatio.startsWith("aspect-")
-      ? aspectRatio
-      : "";
+  const isTailwindAspect =
+    typeof aspectRatio === "string" && aspectRatio.startsWith("aspect-");
 
-  // Otherwise, if aspectRatio is provided and not a Tailwind class, add it as an inline style.
   const inlineStyle =
-    aspectRatio && !tailwindAspect
-      ? { ...style, aspectRatio: aspectRatio }
+    aspectRatio && !isTailwindAspect
+      ? { ...style, aspectRatio: normalizeAspect(aspectRatio) }
       : style;
 
   return (
     <div
-      className={`relative w-full h-auto ${className} ${tailwindAspect}`.trim()}
+      className={`relative w-full ${
+        isTailwindAspect ? aspectRatio : ""
+      } ${className}`.trim()}
       style={inlineStyle}
       {...props}
     >

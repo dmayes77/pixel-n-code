@@ -1,7 +1,14 @@
 {
   "compilerOptions": {
-    "paths": {
-      "@/*": ["./*"]
-    }
-  }
+    "baseUrl": ".",
+    "paths": { "@/*": ["*"] },
+    "checkJs": false,
+    "skipLibCheck": true,
+    "types": [] // prevent implicit @types inclusions
+  },
+  "typeAcquisition": {
+    "enable": false, // disable VS Code’s auto @types fetch
+    "exclude": ["minimatch"] // belt-and-suspenders
+  },
+  "exclude": ["node_modules", ".next", "build", "dist", "public"]
 }

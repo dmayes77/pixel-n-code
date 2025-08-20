@@ -12,7 +12,7 @@ export const businessInfo = {
   description:
     "Based in Chattanooga, TN, Code Maze Web Design crafts eye‑catching, user‑friendly websites that not only look great but perform beautifully. We build on a foundation of SEO best practices—ensuring your site ranks where it matters—and round out our services with print‑design and social‑media expertise to give your brand a cohesive, multi‑channel presence.",
   phone: "(423) 381-8264",
-  email: "info@getcodemaze.com",
+  email: "hello@getcodemaze.com",
   website: "https://www.getcodemaze.com",
 
   address: {
@@ -47,13 +47,13 @@ export const businessInfo = {
 
   logo: {
     main: {
-      publicId: "pixel-n-code/logo-images/code-maze-logo-main",
-      url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1746738303/pixel-n-code/logo-images/code-maze-logo-main.png",
+      src: "/images/logo-images/code-maze-logo-main.png",
+      url: "https://tarxtstpxcbljlljvmxt.supabase.co/storage/v1/object/public/assets/images/logo-images/code-maze-logo-main.png",
       alt: "Code Maze Logo",
     },
     mainWhite: {
-      publicId: "pixel-n-code/logo-images/code-maze-logo-white",
-      url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1746738303/pixel-n-code/logo-images/code-maze-logo-white.png",
+      src: "/images/logo-images/code-maze-logo-white.png",
+      url: "https://tarxtstpxcbljlljvmxt.supabase.co/storage/v1/object/public/assets/images/logo-images/code-maze-logo-white.png",
       alt: "Code Maze Logo (White)",
     },
     badge: {
