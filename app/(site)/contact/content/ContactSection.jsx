@@ -1,8 +1,11 @@
 // components/sections/ContactSection.jsx
 import React from "react";
 import PropTypes from "prop-types";
-import ContactUsForm from "../../../ui/ContactForm";
-import CloudImage from "../../../ui/CloudImage";
+import ContactUsForm from "../../../../components/ui/ContactForm";
+import MediaContainer from "@/components/ui/MediaContainer";
+import SupabaseImage from "@/components/ui/SupaBaseImage";
+import CloudImage from "../../../../components/ui/CloudImage";
+import * as images from "@/content/images/images";
 import { logo } from "@/content/globals";
 import ServicesSection from "./ServicesSection";
 import { servicesSectionContent } from "@/content/pages/services";
@@ -20,12 +23,16 @@ export default function ContactSection({ content }) {
         <div className="w-full h-full laptop:w-1/2 mx-auto text-center self-stretch">
           <div className="w-full h-full laptop:max-w-xs mx-auto py-16 bg-white space-y-8">
             <div className="px-8 max-w-sm mx-auto">
-              <CloudImage
-                publicId={logo.main.publicId}
-                alt={logo.badge.alt}
-                ratio={3 / 1}
-                objectFit="contain"
-              />
+              <MediaContainer aspectRatio="3/1" className="w-full">
+                <SupabaseImage
+                  src={images.logoImages.codeMazeLogoMain}
+                  alt={logo.badge.alt}
+                  fill
+                  fit="contain"
+                />
+              </MediaContainer>
+              
+              
             </div>
             <div className="px-4">
               <p className="h3">Hello from Code Maze!</p>

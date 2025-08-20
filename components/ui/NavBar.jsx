@@ -9,6 +9,8 @@ import NavLink from "./NavLink";
 import { logo } from "@/content/globals";
 import { navItems } from "@/content/navigation";
 import Link from "next/link";
+import MediaContainer from "./MediaContainer";
+import SupabaseImage from "./SupaBaseImage";
 
 export default function NavBar({ rightSlot = null }) {
   const [open, setOpen] = useState(false);
@@ -43,12 +45,14 @@ export default function NavBar({ rightSlot = null }) {
       <nav className="mx-auto flex max-w-7xl items-center justify-between py-3 px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <CloudImage
-            publicId={logo.main.publicId}
-            alt={logo.main.alt}
-            ratio={4 / 1}
-            className="w-44 tablet:w-60"
-          />
+          <MediaContainer aspectRatio="4/1" className="w-40 tablet:w-60">
+            <SupabaseImage
+              src={logo.main.src}
+              alt={logo.main.alt}
+              fill
+              fit="contain"
+            />
+          </MediaContainer>
         </Link>
 
         {/* Desktop nav + right actions */}
@@ -107,12 +111,17 @@ export default function NavBar({ rightSlot = null }) {
               <div className="w-full bg-white shadow-lg pointer-events-auto">
                 <div className="p-6">
                   <div className="flex justify-between items-center mb-4">
-                    <CloudImage
-                      publicId={logo.main.publicId}
-                      alt={logo.main.alt}
-                      ratio={4 / 1}
-                      className="w-44 tablet:w-60"
-                    />
+                    <MediaContainer
+                      aspectRatio="4/1"
+                      className="w-40 tablet:w-60"
+                    >
+                      <SupabaseImage
+                        src={logo.main.src}
+                        alt={logo.main.alt}
+                        fill
+                        fit="contain"
+                      />
+                    </MediaContainer>
                     <button
                       onClick={closeMenu}
                       aria-label="Close menu"

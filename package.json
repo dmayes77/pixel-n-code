@@ -18,7 +18,6 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
-    "dotenv": "^16.5.0",
     "framer-motion": "^12.9.2",
     "lucide-react": "^0.503.0",
     "next": "15.2.4",
@@ -35,7 +34,10 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@supabase/supabase-js": "^2.55.0",
     "@tsconfig/recommended": "^1.0.8",
+    "change-case": "^5.4.4",
+    "dotenv": "^17.2.1",
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
     "tw-animate-css": "^1.2.8"

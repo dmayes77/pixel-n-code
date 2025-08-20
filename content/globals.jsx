@@ -47,13 +47,13 @@ export const businessInfo = {
 
   logo: {
     main: {
-      publicId: "pixel-n-code/logo-images/code-maze-logo-main",
-      url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1746738303/pixel-n-code/logo-images/code-maze-logo-main.png",
+      src: "/images/logo-images/code-maze-logo-main.png",
+      url: "https://tarxtstpxcbljlljvmxt.supabase.co/storage/v1/object/public/assets/images/logo-images/code-maze-logo-main.png",
       alt: "Code Maze Logo",
     },
     mainWhite: {
-      publicId: "pixel-n-code/logo-images/code-maze-logo-white",
-      url: "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/v1746738303/pixel-n-code/logo-images/code-maze-logo-white.png",
+      src: "/images/logo-images/code-maze-logo-white.png",
+      url: "https://tarxtstpxcbljlljvmxt.supabase.co/storage/v1/object/public/assets/images/logo-images/code-maze-logo-white.png",
       alt: "Code Maze Logo (White)",
     },
     badge: {

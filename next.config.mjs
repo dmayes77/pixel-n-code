@@ -111,6 +111,7 @@ const nextConfig = withPWACfg({
     remotePatterns: [
       { protocol: "https", hostname: "res.cloudinary.com" },
       { protocol: "https", hostname: "lh3.googleusercontent.com" },
+      { protocol: "https", hostname: "tarxtstpxcbljlljvmxt.supabase.co" }, // ← add
     ],
   },
 
@@ -119,12 +120,12 @@ const nextConfig = withPWACfg({
       {
         source: "/images/:path*",
         destination:
-          "https://res.cloudinary.com/mayes-auto-detailing-llc/image/upload/wheel-doctor/:path*",
+          "https://tarxtstpxcbljlljvmxt.supabase.co/storage/v1/object/public/assets/images/:path*",
       },
       {
         source: "/videos/:path*",
         destination:
-          "https://res.cloudinary.com/mayes-auto-detailing-llc/video/upload/mad-web-app/videos/:path*",
+          "https://tarxtstpxcbljlljvmxt.supabase.co/storage/v1/object/public/assets/videos/:path*",
       },
     ];
   },

@@ -1,7 +1,10 @@
 // components/sections/ServicesSection.jsx
 import React from "react";
 import PropTypes from "prop-types";
-import CloudImage from "../../../ui/CloudImage";
+import CloudImage from "../../../../components/ui/CloudImage";
+import * as images from "@/content/images/images";
+import SupabaseImage from "@/components/ui/SupaBaseImage";
+import MediaContainer from "@/components/ui/MediaContainer";
 
 /**
  * A grid of service icons with captions.
@@ -19,13 +22,14 @@ export default function ServicesSection({ content }) {
             key={title}
             className="flex flex-col mx-auto mobile:w-40 tablet:w-50 laptop:w-30 items-center"
           >
-            <CloudImage
-              publicId={`pixel-n-code/illustrations/${image}`}
-              alt={title}
-              ratio={1}
-              className="w-full h-auto rounded-lg shadow-md"
-              objectFit="cover"
-            />
+            <MediaContainer aspectRatio={1} className="w-full h-auto">
+              <SupabaseImage
+                src={images.illustrations[image]}
+                alt={title}
+                fill
+                fit="cover"
+              />
+            </MediaContainer>
             <p className="text-sm mt-2 italic text-gray-700">{title}</p>
           </div>
         ))}

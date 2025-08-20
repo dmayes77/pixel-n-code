@@ -2,6 +2,8 @@
 
 import NavLink from "@/components/ui/NavLink";
 import NextLink from "next/link";
+import SupabaseImage from "@/components/ui/SupaBaseImage";
+import MediaContainer from "@/components/ui/MediaContainer";
 import CloudImage from "@/components/ui/CloudImage";
 import {
   FaFacebook,
@@ -40,12 +42,14 @@ export default function Footer() {
         {/* 1) Logo / Tagline / Socials */}
         <div>
           <div className="flex flex-col items-center laptop:items-start text-center laptop:text-left space-y-4">
-            <CloudImage
-              publicId={logo.mainWhite.publicId}
-              alt={logo.main.alt}
-              ratio={4 / 1} // 3:1 aspect
-              className="w-48 tablet:w-60"
-            />
+            <MediaContainer aspectRatio="4/1" className="w-40 tablet:w-60">
+              <SupabaseImage
+                src={logo.mainWhite.src}
+                alt={logo.mainWhite.alt}
+                fill
+                fit="contain"
+              />
+            </MediaContainer>
             <p className="text-sm text-primary-foreground">{tagline}</p>
             <div className="flex space-x-4">
               {socials.facebook && (

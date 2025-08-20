@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Toaster } from "sonner";
-import CloudImage from "@/components/ui/CloudImage";
+import Image from "next/image";
 import { logo } from "@/content/globals";
 
 const NAV = [
@@ -12,24 +12,39 @@ const NAV = [
   { href: "/orbisx/playbooks", label: "Playbooks" },
   { href: "/orbisx/templates", label: "Templates" },
   { href: "/orbisx/training", label: "Training" },
-  { href: "/orbisx/support", label: "Support" }, // ← was Account
+  { href: "/orbisx/support", label: "Support" },
 ];
 
 export default function OrbisXLayout({ children }) {
   const pathname = usePathname();
+
+  // ✅ Guard the logo values
+  const logoSrc = logo?.main?.src || null;
+  const logoAlt = logo?.main?.alt || "Code Maze";
+
   return (
     <>
       <Toaster position="top-center" richColors />
       <div className="min-h-screen bg-gray-50">
         <header className="sticky top-0 z-40 border-b bg-white/70 backdrop-blur-md">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
-            <Link href="/orbisx" className="flex items-center gap-3 ">
-              <CloudImage
-                publicId={logo.main.publicId}
-                alt={logo.main.alt}
-                ratio={4 / 1}
-                className="w-40"
-              />
+            <Link href="/orbisx" className="flex items-center gap-3">
+              {logoSrc ? (
+                <Image
+                  src={logoSrc}
+                  alt={logoAlt}
+                  width={160}
+                  height={40}
+                  priority
+                  className="h-10 w-40 object-contain"
+                />
+              ) : (
+                // Fallback skeleton so we never render <img src="">
+                <div
+                  className="h-10 w-40 rounded bg-slate-200"
+                  aria-label="Code Maze"
+                />
+              )}
               <span className="hidden tablet:inline text-sm font-medium text-slate-600">
                 OrbisX Subscriber Portal
               </span>
@@ -44,6 +59,7 @@ export default function OrbisXLayout({ children }) {
                   <Link
                     key={item.href}
                     href={item.href}
+                    aria-current={active ? "page" : undefined}
                     className={[
                       "rounded-lg px-3 py-2 text-sm",
                       active
