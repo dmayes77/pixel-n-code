@@ -1,14 +1,16 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": { "@/*": ["*"] },
-    "checkJs": false,
-    "skipLibCheck": true,
-    "types": [] // prevent implicit @types inclusions
+    "baseUrl": ".", // allows absolute imports like @/components
+    "paths": {
+      "@/*": ["*"]
+    },
+    "checkJs": false, // disables type checking for .js files
+    "skipLibCheck": true, // skips type checking of declaration files
+    "types": [] // disables automatic inclusion of @types packages
   },
   "typeAcquisition": {
-    "enable": false, // disable VS Code’s auto @types fetch
-    "exclude": ["minimatch"] // belt-and-suspenders
+    "enable": false, // disables automatic fetching of @types
+    "exclude": ["minimatch"] // extra precaution (optional)
   },
   "exclude": ["node_modules", ".next", "build", "dist", "public"]
 }
