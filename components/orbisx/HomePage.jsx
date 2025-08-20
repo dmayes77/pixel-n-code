@@ -112,7 +112,7 @@ export default function HomePage({ features, steps, plans }) {
             {plans.map((p) => (
               <div
                 key={p.name}
-                className="relative rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-200"
+                className="relative flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-200"
               >
                 {p.badge && (
                   <span
@@ -141,19 +141,21 @@ export default function HomePage({ features, steps, plans }) {
                   Ideal for: {p.idealFor}
                 </p>
 
-                <a
-                  href={p.ctaHref}
-                  className="mt-6 inline-flex w-full justify-center rounded-xl bg-primary px-4 py-2 text-white hover:bg-primary/90"
-                >
-                  {p.ctaLabel}
-                </a>
-
-                {p.turnaround && (
-                  <p className="mt-3 text-xs text-slate-500">
-                    Typical timeline:{" "}
-                    <span className="font-medium">{p.turnaround}</span>.
-                  </p>
-                )}
+                {/* CTA + Turnaround at the bottom */}
+                <div className="mt-auto pt-6">
+                  <a
+                    href={p.ctaHref}
+                    className="inline-flex w-full justify-center rounded-xl bg-primary px-4 py-2 text-white hover:bg-primary/90"
+                  >
+                    {p.ctaLabel}
+                  </a>
+                  {p.turnaround && (
+                    <p className="mt-3 text-xs text-slate-500">
+                      Typical timeline:{" "}
+                      <span className="font-medium">{p.turnaround}</span>.
+                    </p>
+                  )}
+                </div>
               </div>
             ))}
           </div>
