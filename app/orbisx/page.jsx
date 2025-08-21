@@ -59,8 +59,8 @@ const steps = [
 const plans = [
   {
     name: "Quick Start Setup (Basic)",
-    price: "$395",
-    turnaround: "2–3 business days",
+    price: "$295",
+    turnaround: "1-2 business days",
     badge: "Fastest launch",
     badgeColor: "primary",
     tagline: "Template-based build with light customizations",
@@ -77,7 +77,7 @@ const plans = [
   },
   {
     name: "Custom Setup",
-    price: "$695",
+    price: "$595",
     turnaround: "3–5 business days",
     badge: "Most tailored",
     badgeColor: "orange",
