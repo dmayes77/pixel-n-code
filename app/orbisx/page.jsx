@@ -59,7 +59,7 @@ const steps = [
 const plans = [
   {
     name: "Quick Start Setup (Basic)",
-    price: "$295",
+    price: "$195",
     turnaround: "1-2 business days",
     badge: "Fastest launch",
     badgeColor: "primary",
@@ -77,7 +77,7 @@ const plans = [
   },
   {
     name: "Custom Setup",
-    price: "$595",
+    price: "$495",
     turnaround: "3–5 business days",
     badge: "Most tailored",
     badgeColor: "orange",
@@ -96,6 +96,24 @@ const plans = [
     ctaLabel: "Choose Custom",
   },
   {
+  name: "Custom Booking Page",
+  price: "$95",
+  turnaround: "1 business days",
+  badge: "Most tailored",
+  badgeColor: "orange",
+  tagline: "Fully branded booking page with advanced styling",
+  bullets: [
+    "Custom booking page (HTML/CSS — branded layout, improved UX)",
+    "Branded color styling and layout customizations",
+    "Cloudinary image optimization for booking assets",
+    "Zoom walkthrough + up to 2 rounds of revisions",
+  ],
+  idealFor: "Teams wanting a highly branded booking experience that feels seamless.",
+  ctaHref: "/orbisx/contact?service=Custom%20Booking%20Page",
+  ctaLabel: "Choose Custom",
+},
+
+  /* {
     name: "Companion App",
     price: "$250 setup + $69/mo",
     turnaround: "Go live in ~3 days",
@@ -111,7 +129,7 @@ const plans = [
     idealFor: "Shops that want an app-like experience & re-engagement.",
     ctaHref: "/orbisx/contact?service=Companion%20App",
     ctaLabel: "Get the App",
-  },
+  },*/
   {
     name: "1:1 Setup Check",
     price: "$99/Session",

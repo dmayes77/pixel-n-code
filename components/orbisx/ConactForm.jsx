@@ -153,7 +153,7 @@ export default function ContactForm() {
           <option value="">Select...</option>
           <option value="Quick Start">Quick Start</option>
           <option value="Custom Setup">Custom Setup</option>
-          <option value="Companion App">Companion App</option>
+          <option value="Custom Booking Page">Companion App</option>
           <option value="1:1 Setup Check">1:1 Setup Check</option>
           <option value="Not Sure">Not Sure</option>
         </select>
