@@ -103,7 +103,7 @@ const plans = [
     badgeColor: "orange",
     tagline: "Fully branded hero header for your OrbisX booking page",
     bullets: [
-      "Custom hero header (HTML/CSS within OrbisX limits): headline, subtext, CTA",
+      "Custom hero header (HTML/CSS): headline, subtext, CTA",
       "Brand-matched colors using OrbisX theme settings (no external CSS)",
       "Layout polish for above-the-fold only (logo, trust badges, highlights)",
       "Optional hero media slot: static image or video with Cloudinary optimization",
