@@ -58,23 +58,51 @@ const steps = [
 // ✅ Now includes Companion App + 1:1 Setup Check with per-plan turnaround & badges
 const plans = [
   {
+    name: "Custom Booking Header",
+    price: "$95",
+    turnaround: "1 business day",
+    badge: "First Impression",
+    badgeColor: "slate", // distinct from premium tiers
+    tagline: "Fully branded hero header for your OrbisX booking page",
+    bullets: [
+      "Custom hero header (HTML/CSS within OrbisX limits): headline, subtext, CTA",
+      "Brand-matched colors using OrbisX theme settings (no global CSS)",
+      "Layout polish for above-the-fold only (logo, trust badges, highlights)",
+      "Optional hero media slot: static image or video with Cloudinary optimization",
+      "Zoom walkthrough + up to 2 rounds of revisions",
+    ],
+    idealFor:
+      "Shops that want the booking page to feel on-brand without changing the rest of the page.",
+    notes: [
+      "Light copy tidy-up for services/packages on request; no structural changes.",
+      "No custom global CSS; we stick to OrbisX’s native color/theme controls.",
+      "No redesign below the header.",
+    ],
+    ctaHref: "/orbisx/contact?service=Custom%20Booking%20Header",
+    ctaLabel: "Choose Header Upgrade",
+  },
+
+  {
     name: "Quick Start Setup (Basic)",
     price: "$195",
     turnaround: "1-2 business days",
     badge: "Fastest launch",
     badgeColor: "primary",
-    tagline: "Template-based build with light customizations",
+    tagline: "Branded header + marketing-focused setup using OrbisX tools",
     bullets: [
-      "Booking page setup using default OrbisX tools",
-      "Add your logo, banner, and business info",
-      "Services & packages loaded and organized",
-      "Basic workflows",
+      "Includes the Custom Booking Header",
+      "Branded setup with your logo, banner, and business info",
+      "Services & packages cleaned up and organized for clarity & conversion",
+      "Marketing/client-focused wording adjustments (no custom CSS)",
+      "Basic workflows configured",
       "Zoom walkthrough + up to 2 rounds of revisions",
     ],
-    idealFor: "Shops wanting a professional, ready-to-use setup fast.",
+    idealFor:
+      "Shops wanting a branded booking page and professional setup fast, without advanced CSS customizations.",
     ctaHref: "/orbisx/contact?service=Quick%20Start",
     ctaLabel: "Choose Quick Start",
   },
+
   {
     name: "Custom Setup",
     price: "$495",
@@ -83,60 +111,24 @@ const plans = [
     badgeColor: "orange",
     tagline: "Fully tailored build with advanced integrations",
     bullets: [
-      "Everything from Quick Launch",
-      "Custom booking page (HTML/CSS — branded layout, better UX)",
-      "Cloudinary image optimization",
+      "Everything from Quick Start (header + marketing-focused services/packages)",
+      "Custom booking page (HTML/CSS — branded layout, improved UX)",
+      "Cloudinary image optimization for all booking assets",
+      "Branded system emails (HTML/CSS) — confirmations, reminders, updates",
       "Advanced automations (custom workflows, lead flows, tagging logic)",
-      "Branded color styling and layout customizations",
-      "Tailored service flow logic (e.g., conditional forms, follow-up sequences)",
+      "Branded color styling and layout customizations beyond OrbisX defaults",
       "Zoom walkthrough + up to 3 rounds of revisions",
     ],
     idealFor: "Teams wanting a highly branded, dialed-in experience.",
+    notes: [
+      "Any and everything that can be customized within OrbisX will be customized.",
+      "Emails are built with inlined CSS for broad client support and wired to OrbisX triggers.",
+      "Images hosted via Cloudinary; copy and branding matched to your booking experience.",
+    ],
     ctaHref: "/orbisx/contact?service=Custom%20Setup",
     ctaLabel: "Choose Custom",
   },
-  {
-    name: "Custom Booking Header",
-    price: "$95",
-    turnaround: "1 business day",
-    badge: "First Impression",
-    badgeColor: "orange",
-    tagline: "Fully branded hero header for your OrbisX booking page",
-    bullets: [
-      "Custom hero header (HTML/CSS): headline, subtext, CTA",
-      "Brand-matched colors using OrbisX theme settings (no external CSS)",
-      "Layout polish for above-the-fold only (logo, trust badges, highlights)",
-      "Optional hero media slot: static image or video with Cloudinary optimization",
-      "Zoom walkthrough + up to 2 rounds of revisions",
-    ],
-    idealFor:
-      "Shops that want the booking page to ‘feel on-brand’ without a full rebuild.",
-    notes: [
-      "Services & packages: cleaned up for clarity (titles/order/copy) but not custom-styled.",
-      "No custom global CSS; we stick to OrbisX’s native color/theme controls.",
-      "This does not include a full page redesign below the fold.",
-    ],
-    ctaHref: "/orbisx/contact?service=Custom%20Booking%20Header",
-    ctaLabel: "Choose Header Upgrade",
-  },
 
-  /* {
-    name: "Companion App",
-    price: "$250 setup + $69/mo",
-    turnaround: "Go live in ~3 days",
-    badge: "Recurring value",
-    badgeColor: "violet",
-    tagline: "Installable web app (no App Store) with push notifications.",
-    bullets: [
-      "Branded App installed at app.yourdomain.com that behaves like a real app",
-      "Optional Push notifications for promos & reminders",
-      "Services, packages, booking, and FAQs",
-      "Fully integrated admin dashboard so you control your content",
-    ],
-    idealFor: "Shops that want an app-like experience & re-engagement.",
-    ctaHref: "/orbisx/contact?service=Companion%20App",
-    ctaLabel: "Get the App",
-  },*/
   {
     name: "1:1 Setup Check",
     price: "$99/Session",
@@ -156,6 +148,7 @@ const plans = [
     ctaLabel: "Book a Check",
   },
 ];
+
 
 export default function OrbisXPage() {
   // Only include numeric-price offers in JSON-LD
