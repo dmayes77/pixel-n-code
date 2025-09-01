@@ -59,7 +59,7 @@ const steps = [
 const plans = [
   {
     name: "Custom Booking Header",
-    price: "$95",
+    price: "$99",
     turnaround: "1 business day",
     badge: "First Impression",
     badgeColor: "slate", // distinct from premium tiers
@@ -84,7 +84,7 @@ const plans = [
 
   {
     name: "Quick Start Setup (Basic)",
-    price: "$195",
+    price: "$199",
     turnaround: "1-2 business days",
     badge: "Fastest launch",
     badgeColor: "primary",
@@ -105,7 +105,7 @@ const plans = [
 
   {
     name: "Custom Setup",
-    price: "$495",
+    price: "$499",
     turnaround: "3–5 business days",
     badge: "Most tailored",
     badgeColor: "orange",
