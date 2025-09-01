@@ -32,18 +32,11 @@ const features = [
     "Custom HTML/CSS booking pages, branded colors, and Cloudinary-optimized images.",
   ],
   [
-    "Mobile App Experience",
-    "A PWA clients can install from your website — looks and feels like a real app, without the App Store.",
-  ],
-  [
-    "Push Notifications",
-    "Send promotional alerts or reminders directly to clients through your branded Companion App.",
-  ],
-  [
-    "Admin Dashboard Control",
-    "You control your content — services, pricing, booking rules, and FAQs — with ease.",
+    "Team Training & Playbooks",
+    "COMING SOON- Step-by-step guides and live training to ensure your staff can confidently use OrbisX from day one.",
   ],
 ];
+
 
 const steps = [
   ["Map", "Short discovery to map your services and current flow."],
@@ -55,6 +48,10 @@ const steps = [
   ],
 ];
 
+// ✅ Reuse one link for all plans
+const discoveryLink =
+  "https://calendly.com/getcodemaze/orbisx-discovery-meeting";
+
 // ✅ Now includes Companion App + 1:1 Setup Check with per-plan turnaround & badges
 const plans = [
   {
@@ -62,7 +59,7 @@ const plans = [
     price: "$99",
     turnaround: "1 business day",
     badge: "First Impression",
-    badgeColor: "slate", // distinct from premium tiers
+    badgeColor: "slate",
     tagline: "Fully branded hero header for your OrbisX booking page",
     bullets: [
       "Custom hero header (HTML/CSS within OrbisX limits): headline, subtext, CTA",
@@ -78,10 +75,9 @@ const plans = [
       "No custom global CSS; we stick to OrbisX’s native color/theme controls.",
       "No redesign below the header.",
     ],
-    ctaHref: "/orbisx/contact?service=Custom%20Booking%20Header",
+    ctaHref: discoveryLink,
     ctaLabel: "Choose Header Upgrade",
   },
-
   {
     name: "Quick Start Setup (Basic)",
     price: "$199",
@@ -99,10 +95,9 @@ const plans = [
     ],
     idealFor:
       "Shops wanting a branded booking page and professional setup fast, without advanced CSS customizations.",
-    ctaHref: "/orbisx/contact?service=Quick%20Start",
+    ctaHref: discoveryLink,
     ctaLabel: "Choose Quick Start",
   },
-
   {
     name: "Custom Setup",
     price: "$499",
@@ -125,10 +120,9 @@ const plans = [
       "Emails are built with inlined CSS for broad client support and wired to OrbisX triggers.",
       "Images hosted via Cloudinary; copy and branding matched to your booking experience.",
     ],
-    ctaHref: "/orbisx/contact?service=Custom%20Setup",
+    ctaHref: discoveryLink,
     ctaLabel: "Choose Custom",
   },
-
   {
     name: "1:1 Setup Check",
     price: "$99/Session",
@@ -144,11 +138,10 @@ const plans = [
       "The Discovery Call is your one hour session",
     ],
     idealFor: "DIYers wanting expert eyes before going live.",
-    ctaHref: "/orbisx/contact?service=1:1%20Setup%20Check",
+    ctaHref: discoveryLink,
     ctaLabel: "Book a Check",
   },
 ];
-
 
 export default function OrbisXPage() {
   // Only include numeric-price offers in JSON-LD

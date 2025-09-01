@@ -10,6 +10,7 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     businessName: "",
+    phoneNumber: "",
     email: "",
     website: "",
     orbisxUrl: "",
@@ -104,6 +105,17 @@ export default function ContactForm() {
         <label className="block text-sm font-medium">Email Address *</label>
         <input
           name="email"
+          type="email"
+          required
+          onChange={handleChange}
+          value={formData.email}
+          className="mt-1 w-full rounded border-gray-300 shadow-sm"
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium">Phone Number *</label>
+        <input
+          name="phoneNumber"
           type="email"
           required
           onChange={handleChange}
