@@ -54,7 +54,7 @@ const plans = [
       "Brand-matched colors using OrbisX theme settings (no global CSS)",
       "Layout polish for above-the-fold only (logo, trust badges, highlights)",
       "Optional hero media slot: static image or video with Cloudinary optimization",
-      "Zoom walkthrough + up to 2 rounds of revisions",
+      "Google Meets walkthrough + up to 2 rounds of revisions",
     ],
     idealFor: "Shops that want the booking page to feel on-brand without changing the rest of the page.",
     notes: [
@@ -77,7 +77,7 @@ const plans = [
       "Branded setup with your logo, banner, and business info",
       "Services & packages cleaned up and organized for clarity & conversion",
       "Marketing/client-focused wording adjustments (no custom CSS)",
-      "Zoom walkthrough + up to 2 rounds of revisions",
+      "Google Meets walkthrough + up to 2 rounds of revisions",
     ],
     idealFor: "Shops wanting a branded booking page and professional setup fast, without advanced CSS customizations.",
     ctaHref: discoveryLink,
@@ -96,7 +96,7 @@ const plans = [
       "Cloudinary image optimization for all booking assets",
       "Branded system emails (HTML/CSS) — confirmations, reminders, updates",
       "Branded color styling and layout customizations beyond OrbisX defaults",
-      "Zoom walkthrough + up to 3 rounds of revisions",
+      "Google Meets walkthrough + up to 3 rounds of revisions",
     ],
     idealFor: "Teams wanting a highly branded, dialed-in experience.",
     notes: [
