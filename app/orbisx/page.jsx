@@ -2,8 +2,7 @@
 import HomePage from "@/components/orbisx/HomePage";
 
 export const metadata = {
-  title:
-    "OrbisX for Detailers & Tint Shops | Subscriber Setup & Portal | Code Maze",
+  title: "OrbisX for Detailers & Tint Shops | Subscriber Setup & Portal | Code Maze",
   description:
     "Done-for-you OrbisX implementation and subscriber portal: pipelines, 2-way SMS, booking, automations, websites, and training—purpose-built for detailers & tint shops.",
   alternates: { canonical: "/orbisx" },
@@ -12,45 +11,34 @@ export const metadata = {
 
 const features = [
   [
-    "Lead → Job Pipeline",
-    "Custom stages that match your workflow (Inquiry, Quote, Booked, Completed, Review).",
+    "Custom Booking Form Design",
+    "We restyle your OrbisX booking form with custom HTML and CSS so it visually matches your website’s design and layout.",
   ],
   [
-    "Online Booking System",
-    "Branded booking flow with calendar rules, service logic, and add-ons.",
+    "Branded Color & Font Matching",
+    "We apply your website’s exact brand colors, typography, and spacing for a seamless, on-brand experience.",
   ],
   [
-    "Automations & Workflows",
-    "Deposit requests, reminders, no-show buffers, and internal alerts — all prebuilt and tested.",
+    "Responsive Layout Adjustments",
+    "We ensure your booking form looks clean and consistent across desktop, tablet, and mobile devices.",
   ],
   [
-    "Custom Quotes & Invoices",
-    "Use preset packages, upsell extras, and send clean, consistent proposals in clicks.",
-  ],
-  [
-    "Visual Customizations",
-    "Custom HTML/CSS booking pages, branded colors, and Cloudinary-optimized images.",
-  ],
-  [
-    "Team Training & Playbooks",
-    "COMING SOON- Step-by-step guides and live training to ensure your staff can confidently use OrbisX from day one.",
+    "Embed & Integration Support",
+    "We provide easy embed code and guidance to integrate your customized booking form back into your website flawlessly.",
   ],
 ];
 
 
 const steps = [
-  ["Map", "Short discovery to map your services and current flow."],
-  ["Build", "We configure pipelines, templates, booking, and automations."],
-  ["Test", "We test everything internally to ensure it works before handoff."],
-  [
-    "Train",
-    "Live handoff, playbooks, and a 30-day optimization window for revisions.",
-  ],
+  ["Map", "We review your website and booking form to understand your brand style, structure, and layout."],
+  ["Build", "We rebuild your OrbisX booking form using custom HTML and CSS to match your website’s look and flow."],
+  ["Review", "You’ll receive a live preview for feedback, and we’ll make refinements until it’s a perfect visual match."],
+  ["Embed", "We provide the embed code and assist with adding your customized form back to your website."],
 ];
 
+
 // ✅ Reuse one link for all plans
-const discoveryLink =
-  "https://calendly.com/getcodemaze/orbisx-discovery-meeting";
+const discoveryLink = "https://calendly.com/getcodemaze/orbisx-discovery-meeting";
 
 // ✅ Now includes Companion App + 1:1 Setup Check with per-plan turnaround & badges
 const plans = [
@@ -68,8 +56,7 @@ const plans = [
       "Optional hero media slot: static image or video with Cloudinary optimization",
       "Zoom walkthrough + up to 2 rounds of revisions",
     ],
-    idealFor:
-      "Shops that want the booking page to feel on-brand without changing the rest of the page.",
+    idealFor: "Shops that want the booking page to feel on-brand without changing the rest of the page.",
     notes: [
       "Light copy tidy-up for services/packages on request; no structural changes.",
       "No custom global CSS; we stick to OrbisX’s native color/theme controls.",
@@ -90,11 +77,9 @@ const plans = [
       "Branded setup with your logo, banner, and business info",
       "Services & packages cleaned up and organized for clarity & conversion",
       "Marketing/client-focused wording adjustments (no custom CSS)",
-      "Basic workflows configured",
       "Zoom walkthrough + up to 2 rounds of revisions",
     ],
-    idealFor:
-      "Shops wanting a branded booking page and professional setup fast, without advanced CSS customizations.",
+    idealFor: "Shops wanting a branded booking page and professional setup fast, without advanced CSS customizations.",
     ctaHref: discoveryLink,
     ctaLabel: "Choose Quick Start",
   },
@@ -110,7 +95,6 @@ const plans = [
       "Custom booking page (HTML/CSS — branded layout, improved UX)",
       "Cloudinary image optimization for all booking assets",
       "Branded system emails (HTML/CSS) — confirmations, reminders, updates",
-      "Advanced automations (custom workflows, lead flows, tagging logic)",
       "Branded color styling and layout customizations beyond OrbisX defaults",
       "Zoom walkthrough + up to 3 rounds of revisions",
     ],
@@ -170,10 +154,7 @@ export default function OrbisXPage() {
   return (
     <>
       <HomePage features={features} steps={steps} plans={plans} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJson) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJson) }} />
     </>
   );
 }
