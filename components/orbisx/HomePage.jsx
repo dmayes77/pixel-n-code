@@ -15,7 +15,7 @@ export default function HomePage({ features, steps, plans }) {
     <div className="bg-gray-50">
       {/* Capacity ribbon */}
       <div className="bg-primary/10 text-primary text-center text-sm py-2">
-        Accepting <span className="font-semibold">5 setups per week</span> to
+        Accepting <span className="font-semibold">3 setups per week</span> to
         maintain quality.
       </div>
 
